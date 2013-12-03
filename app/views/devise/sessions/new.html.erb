@@ -261,8 +261,8 @@
 <!--[if IE 8 ]>    <html lang="en" class="ie8"> <![endif]-->
 <!--[if (gte IE 9)|!(IE)]><!-->  <!--<![endif]-->
 
- <body style="background:url(<%= image_path('bg.jpg') %>);">
-      <center><h1><!--Document Management--><img src="<%= image_path('logo.png') %>"></h1></center>
+ <body style="background:url(<%#= image_path('bg.jpg') %>);">
+      <center><h1><!--Document Management--><img src="<%#= image_path('logo.png') %>"></h1></center>
     <div class="container">
       <section id="content">
 
