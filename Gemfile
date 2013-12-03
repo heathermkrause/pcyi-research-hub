@@ -11,7 +11,7 @@ gem 'execjs'
 
 gem 'roo'
 #gem 'mysql2'
-gem "pg"
+gem "pg", "0.9.0"
 gem "paperclip", "~> 3.0"
 gem "debugger"
 gem 'jquery-tokeninput-rails'
