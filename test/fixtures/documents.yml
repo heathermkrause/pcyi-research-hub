@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  report_name: MyString
+  author: MyString
+  sponsoring_orgnization: MyString
+  date_of_report: 2013-12-02
+  key_findings: MyText
+  key_recommendations: MyText
+  keywords: MyText
+  key_ages: MyString
+  notes_on_mythodology: MyText
+  target_population: MyString
+  data_availablity: MyString
+  user_id: 1
+
+two:
+  report_name: MyString
+  author: MyString
+  sponsoring_orgnization: MyString
+  date_of_report: 2013-12-02
+  key_findings: MyText
+  key_recommendations: MyText
+  keywords: MyText
+  key_ages: MyString
+  notes_on_mythodology: MyText
+  target_population: MyString
+  data_availablity: MyString
+  user_id: 1

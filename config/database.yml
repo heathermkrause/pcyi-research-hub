@@ -1,0 +1,21 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: doc_development
+  pool: 5
+  username: pratik
+  password: pratik123
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: doc_test
+  pool: 5
+  username: pratik
+  password: pratik123
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: doc_production
+  pool: 5
+  username: pratik
+  password: pratik123

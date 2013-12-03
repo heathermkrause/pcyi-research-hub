@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/document_management_1.0/!svn/ver/46/trunk/document_management_final/app/views/keyfindings
+END
+show.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/document_management_1.0/!svn/ver/46/trunk/document_management_final/app/views/keyfindings/show.html.erb
+END
+_form.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/document_management_1.0/!svn/ver/46/trunk/document_management_final/app/views/keyfindings/_form.html.erb
+END
+edit.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/document_management_1.0/!svn/ver/46/trunk/document_management_final/app/views/keyfindings/edit.html.erb
+END
+index.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/document_management_1.0/!svn/ver/46/trunk/document_management_final/app/views/keyfindings/index.html.erb
+END
+new.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/document_management_1.0/!svn/ver/46/trunk/document_management_final/app/views/keyfindings/new.html.erb
+END

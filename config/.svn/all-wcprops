@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/document_management_1.0/!svn/ver/57/trunk/document_management_final/config
+END
+routes.rb
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/document_management_1.0/!svn/ver/54/trunk/document_management_final/config/routes.rb
+END
+database.yml
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/document_management_1.0/!svn/ver/2/trunk/document_management_final/config/database.yml
+END
+application.rb
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/document_management_1.0/!svn/ver/2/trunk/document_management_final/config/application.rb
+END
+boot.rb
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/document_management_1.0/!svn/ver/2/trunk/document_management_final/config/boot.rb
+END
+environment.rb
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/document_management_1.0/!svn/ver/2/trunk/document_management_final/config/environment.rb
+END

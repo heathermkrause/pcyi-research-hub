@@ -1,0 +1,37 @@
+ <!------  Key Finding Model Box ------------>
+<div class="modal hide fade" id="key_finding">
+    <div class="modal-header">
+      <button class="close" data-dismiss="modal">&times;</button>
+      
+    </div>
+    
+    <div class="modal-body">
+      <div id="findings">
+        <div class="control-group">
+          <%= f.fields_for :keyfindings do |keyfinding_form| %>
+          <label for="contact-name" class="control-label">Key Finding :</label>
+            
+          <div class="controls">
+            <%= keyfinding_form.text_field :keyfinding_text,{:placeholder=>"Key Finding", :id=>"contact-name"} %>
+          </div>
+        </div>
+                
+          <div class="control-group">
+          <label for="contact-name" class="control-label">Select Image :</label>
+          
+          <div class="controls">
+            <%= keyfinding_form.file_field :keyfinding_image,{:placeholder=>"Select Image", :id=>"contact-name"} %>
+          </div>
+
+            <%#= keyfinding_form.link_to_remove "Remove this task" %>
+
+        </div>
+        <% end %>
+        </div>
+    </div>
+
+          <div class="controls">
+             <%= f.link_to_add "Add a key finding", :keyfindings, "data-target" => "#findings", :class => "btn btn-primary" %>
+             <input type="submit" class="btn btn-primary" value="Save" data-dismiss="modal" />
+          </div>
+  </div>
