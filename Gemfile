@@ -10,7 +10,8 @@ gem 'execjs'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'roo'
-gem 'mysql2'
+#gem 'mysql2'
+gem "pg"
 gem "paperclip", "~> 3.0"
 gem "debugger"
 gem 'jquery-tokeninput-rails'
