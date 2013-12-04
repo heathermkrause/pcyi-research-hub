@@ -5,103 +5,102 @@
       <h1 style="height:1px;"></h1>
       <div style="width:1050px; margin:0px auto;">
         <%= form_tag("/excelsheets/new", :multipart => true, :class => "form-horizontal") do %>
-        <div style="width:100%; float:left; margin-left:-25px;">
+          <div style="width:100%; float:left; margin-left:-25px;">
             <div style="width:100%; float:left; margin-left:-25px;">
               <div style="width:50%; margin:0px auto; padding:20px;">
                 <div class="control-group">
                   <div class="controls">
                   <%= label_tag "Select Document","Select Document",{:class => "control-label"}  %>
-                  <%= file_field_tag "excelsheet[excelsheet_file]", :class=>"input-small" %>
+                  <%= file_field_tag "excelsheet[excelsheet_file]", :class=>"input-small",:required=>"required" %>
                   <%= submit_tag "upload" %>
                   </div>
-                  <div class="controls"><a href="#" style="width:90px;" class="btn btn-info">Or</a></div>   
+                  <div class="controls"><a href="#" style="width:90px;" class="btn btn-info">Or</a></div>
                 </div>
               </div>
             </div>
-            </div>
-          <% end %>
-         </div>
-         <div style="width:1050px; margin:0px auto;">
-          <%= nested_form_for(@document,:html => {:class=>"form-horizontal"}) do |f| %>
-           <div style="width:45%; float:left;">
-              <div class="control-group">
-                <label class="control-label">Report Name</label>
-                <div class="controls"><input type="text" placeholder="Report Name" class="" required="" name="document[report_name]" ></div>      
-              </div>
-
-              <div class="control-group">
-                <label class="control-label">Organizition Sponsoring report</label>
-                <div class="controls"><input type="text" placeholder="Organizition Sponsoring report" class="" required="" name="document[sponsoring_orgnization]"></div>     
-              </div>
-
-              <div class="control-group">
-                <label class="control-label">Key Finding</label>
-                <div class="controls"><a class="btn btn-info" style="width:80px;" href=""  data-toggle="modal" data-target="#key_finding">Add</a></div>      
-              </div>
-                      
-              <div class="control-group">
-                <label class="control-label">Notes on Methodology</label>
-                <div class="controls"><input type="text" placeholder="Notes on Methodology" class="" required="" name="document[key_ages]" ></div>     
-              </div>             
-
-
-              <div class="control-group">
-                <label class="control-label">Data Availability</label>
-                <div class="controls"><input type="text" placeholder="Data Availability" class="" required="" name="document[data_availablity]" >
-                </div>      
-              </div> 
-
-            </div>         
-                        
-            <div style="width:45%; float:left; margin-bottom:35px;">
-              <div class="control-group">
-                <label class="control-label">Author</label>
-                <div class="controls"><input type="text" placeholder="Author" class="" required="" name="document[author]" ></div>     
-              </div>
-
-              <div class="control-group">
-                <label class="control-label">Date of Report</label>
-                <div class="controls"><input type="text" id="datepicker" placeholder="Date of Report" class="hasDatepicker" required="" name="document[date_of_report]"></div>      
-              </div>
-
-              <div class="control-group">
-                <label class="control-label">Key Recommendations</label>
-                <div class="controls"><input type="text" placeholder="Key Recommendations" class="" required="" name="document[key_recommendations]"></div>      
-              </div>
-
-              <div class="control-group">
-                <label class="control-label">Key Ages</label>
-                <div class="controls"><input type="text" placeholder="Key Ages" class="" required="" name="document[key_ages]" ></div>     
-              </div>
-
-              <div class="control-group">
-                <label class="control-label">Target Population</label>
-                <div class="controls"><input type="text" placeholder="Target Population" class="" required="" name="document[target_population]"></div>      
-              </div>
-
-
-            </div>
-            
-            <div class="control-group">
-              <div class="controls">
-                <p style="margin-left:142px;"><button id="signin" type="submit">Upload</button></p>
-              </div>
-            </div>
-
-            <%= render :partial => "key_findings", :locals => {:f => f} %>
-
-          <% end %>
-
-        </div>
+          </div>
+        <% end %>
       </div>
+      <div style="width:1050px; margin:0px auto;">
+        <%= nested_form_for(@document,:html => {:class=>"form-horizontal"}) do |f| %>
+          <div style="width:45%; float:left;">
+            <div class="control-group">
+              <label class="control-label">Report Name</label>
+              <div class="controls"><input type="text" placeholder="Report Name" class="" required="" name="document[report_name]" ></div>
+            </div>
 
+            <div class="control-group">
+              <label class="control-label">Organizition Sponsoring report</label>
+              <div class="controls"><input type="text" placeholder="Organizition Sponsoring report" class="" required="" name="document[sponsoring_orgnization]"></div>
+            </div>
+
+            <div class="control-group">
+              <label class="control-label">Key Finding</label>
+              <div class="controls"><a class="btn btn-info" style="width:80px;" href=""  data-toggle="modal" data-target="#key_finding">Add</a></div>
+            </div>
+
+            <div class="control-group">
+              <label class="control-label">Notes on Methodology</label>
+              <div class="controls"><input type="text" placeholder="Notes on Methodology" class="" required="" name="document[key_ages]" ></div>
+            </div>
+
+
+            <div class="control-group">
+              <label class="control-label">Data Availability</label>
+              <div class="controls"><input type="text" placeholder="Data Availability" class="" required="" name="document[data_availablity]" >
+              </div>
+            </div>
+
+          </div>
+
+          <div style="width:45%; float:left; margin-bottom:35px;">
+            <div class="control-group">
+              <label class="control-label">Author</label>
+              <div class="controls"><input type="text" placeholder="Author" class="" required="" name="document[author]" ></div>
+            </div>
+
+            <div class="control-group">
+              <label class="control-label">Date of Report</label>
+              <div class="controls"><input type="text" id="datepicker" placeholder="Date of Report" class="hasDatepicker" required="" name="document[date_of_report]"></div>
+            </div>
+
+            <div class="control-group">
+              <label class="control-label">Key Recommendations</label>
+              <div class="controls"><input type="text" placeholder="Key Recommendations" class="" required="" name="document[key_recommendations]"></div>
+            </div>
+
+            <div class="control-group">
+              <label class="control-label">Key Ages</label>
+              <div class="controls"><input type="text" placeholder="Key Ages" class="" required="" name="document[key_ages]" ></div>
+            </div>
+
+            <div class="control-group">
+              <label class="control-label">Target Population</label>
+              <div class="controls"><input type="text" placeholder="Target Population" class="" required="" name="document[target_population]"></div>
+            </div>
+
+
+          </div>
+
+          <div class="control-group">
+            <div class="controls">
+              <p style="margin-left:142px;"><button id="signin" type="submit">Upload</button></p>
+            </div>
+          </div>
+
+          <%= render :partial => "key_findings", :locals => {:f => f} %>
+
+        <% end %>
+
+      </div>
     </div>
-    
-    
-    
+
   </div>
 
+
+
 </div>
+
 
 <% 
 =begin %>
@@ -117,9 +116,9 @@
       <h2><%= pluralize(@document.errors.count, "error") %> prohibited this document from being saved:</h2>
 
       <ul>
-      <% @document.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
+        <% @document.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>
@@ -177,14 +176,19 @@
   </div>
 <% end %>
 %>
-<% 
+  <%
 =end %>
+<footer style="width:100%; background:#999; padding:15px; margin-top:12%;margin-left:-2%; position:fixed;">
+  <div class="container">
+    &#169;&nbsp;<%= Time.now.year %> All rights are reserved.
+  </div>
+</footer>
 <script type="text/javascript">
-$(document).ready(function () {
+  $(document).ready(function () {
     $("#keywords").tokenInput("/keywords/get_keywords", {
-        theme: "facebook",
-        propertyToSearch: "keyword_text"
+      theme: "facebook",
+      propertyToSearch: "keyword_text"
     });
-});
+  });
 </script>
 

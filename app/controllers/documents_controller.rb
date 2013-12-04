@@ -5,8 +5,9 @@ class DocumentsController < ApplicationController
   before_filter :authenticate_user!
   
   def index
-    @documents = Document.all
-
+    @documents = current_user.documents.paginate(:page => params[:page])
+    @keyfinding_of_document = @documents.empty? ? [] : Keyfinding.where(:document_id => @documents.all.map(&:id))
+    @keyword = Keyword.new
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @documents }
@@ -28,7 +29,7 @@ class DocumentsController < ApplicationController
   # GET /documents/new.json
   def new
     @document = Document.new
- @keyfinding = Keyfinding.new
+    @keyfinding = Keyfinding.new
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @document }
@@ -85,8 +86,8 @@ class DocumentsController < ApplicationController
   end
 
   def create_with_excelsheet
-    excelsheet = Excelsheet.new(params[:excelsheet])
-    
+    excelsheet = current_user.excelsheets.new(params[:excelsheet])
+
     respond_to do |format|
       if excelsheet.save
         format.html { redirect_to :action => "index", notice: 'Document was successfully created.' }
@@ -95,6 +96,21 @@ class DocumentsController < ApplicationController
       end
     end
 
+  end
+
+  def search
+    @documents = current_user.documents.joins([:keywords,:keyfindings]).where("keyword_text LIKE :search OR keyfinding_text LIKE :search ", :search => "%#{params[:search]}%")
+    @keyfinding_of_document = @documents.empty? ? [] : Keyfinding.where(:document_id => @documents.all.map(&:id))
+    @keyword = Keyword.new
+
+    unless @documents.empty?
+       respond_to do |format|
+        format.html { render :index }
+        format.json { render json: @documents }
+      end
+    else
+       #error handeling code
+    end
   end
 
 end

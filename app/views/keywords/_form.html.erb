@@ -1,25 +1,26 @@
-<%= form_for(@keyword) do |f| %>
-  <% if @keyword.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@keyword.errors.count, "error") %> prohibited this keyword from being saved:</h2>
+<div class="modal-body">
+  <%= form_for(@keyword, :html=>{:class=>"form-horizontal"}) do |f| %>
 
-      <ul>
-      <% @keyword.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+  
+      <%= f.hidden_field :document_id %>
+
+    <div class="control-group">
+      <label for="contact-name" class="control-label">Key Word :</label>
+
+      <div class="controls">
+        <%= f.text_field :keyword_text, :required=>"required",:id=>"contact-name", :placeholder=>"Key Word" %>
+  <%#*<input type="text" required id="contact-name" placeholder="Key Word" />%>
+      </div>
+    </div>
+
+
+
+    <div class="control-group">
+      <div class="controls">
+        <%= f.submit "Save" ,:class=>"btn btn-primary" %>
+
+        <input type="reset" class="btn btn-primary" value="Cancel" data-dismiss="modal" />
+      </div>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :document_id %><br />
-    <%= f.number_field :document_id %>
-  </div>
-  <div class="field">
-    <%= f.label :keyword_text %><br />
-    <%= f.text_field :keyword_text %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+</div>

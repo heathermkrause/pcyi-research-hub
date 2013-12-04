@@ -5,7 +5,8 @@ gem 'rails', '3.2.13'
 gem 'devise'
 gem 'therubyracer'
 gem 'execjs'
-
+gem 'debugger'
+gem 'will_paginate', '~> 3.0'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
@@ -17,6 +18,8 @@ gem "debugger"
 gem 'jquery-tokeninput-rails'
 gem "nested_form"
 gem 'rails_12factor', group: :production
+
+gem "paperclip-aws"
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do

@@ -1,7 +1,13 @@
 K 25
 svn:wc:ra_dav:version-url
 V 95
-/svn/document_management_1.0/!svn/ver/51/trunk/document_management_final/app/assets/javascripts
+/svn/document_management_1.0/!svn/ver/70/trunk/document_management_final/app/assets/javascripts
+END
+keywords.js.coffee
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/document_management_1.0/!svn/ver/51/trunk/document_management_final/app/assets/javascripts/keywords.js.coffee
 END
 jquery.tokeninput.js
 K 25
@@ -62,10 +68,4 @@ K 25
 svn:wc:ra_dav:version-url
 V 122
 /svn/document_management_1.0/!svn/ver/22/trunk/document_management_final/app/assets/javascripts/jquery.jcontent.0.8.min.js
-END
-keywords.js.coffee
-K 25
-svn:wc:ra_dav:version-url
-V 114
-/svn/document_management_1.0/!svn/ver/51/trunk/document_management_final/app/assets/javascripts/keywords.js.coffee
 END

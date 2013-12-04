@@ -1,19 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 91
-/svn/document_management_1.0/!svn/ver/46/trunk/document_management_final/app/views/keywords
-END
-_form.html.erb
-K 25
-svn:wc:ra_dav:version-url
-V 106
-/svn/document_management_1.0/!svn/ver/46/trunk/document_management_final/app/views/keywords/_form.html.erb
-END
-edit.html.erb
-K 25
-svn:wc:ra_dav:version-url
-V 105
-/svn/document_management_1.0/!svn/ver/46/trunk/document_management_final/app/views/keywords/edit.html.erb
+/svn/document_management_1.0/!svn/ver/85/trunk/document_management_final/app/views/keywords
 END
 index.html.erb
 K 25
@@ -32,4 +20,16 @@ K 25
 svn:wc:ra_dav:version-url
 V 105
 /svn/document_management_1.0/!svn/ver/46/trunk/document_management_final/app/views/keywords/show.html.erb
+END
+_form.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/document_management_1.0/!svn/ver/85/trunk/document_management_final/app/views/keywords/_form.html.erb
+END
+edit.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/document_management_1.0/!svn/ver/46/trunk/document_management_final/app/views/keywords/edit.html.erb
 END

@@ -5,10 +5,13 @@ class User < ActiveRecord::Base
     :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :name
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :name, :excelsheets_attributes
 
   validates :name, :presence => {:message => "Name can't be blank"}
   # attr_accessible :title, :body
 
-  belongs_to :document
+  has_many :documents
+  has_many :excelsheets
+
+  accepts_nested_attributes_for :excelsheets
 end

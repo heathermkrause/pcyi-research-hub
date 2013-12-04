@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131203131807) do
+ActiveRecord::Schema.define(:version => 20131204122951) do
 
   create_table "documents", :force => true do |t|
     t.string   "report_name"
@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(:version => 20131203131807) do
     t.string   "excelsheet_file_content_type"
     t.integer  "excelsheet_file_file_size"
     t.datetime "excelsheet_file_updated_at"
+    t.integer  "user_id"
   end
 
   create_table "keyfindings", :force => true do |t|

@@ -10,7 +10,11 @@ DocumentManagementFinal::Application.routes.draw do
   end
 
 
-  resources :documents
+  resources :documents do
+    collection do
+      get "search"
+    end
+  end
 
 
   devise_for :users
@@ -20,6 +24,7 @@ DocumentManagementFinal::Application.routes.draw do
   end
 
   match "/excelsheets/new" => "documents#create_with_excelsheet"
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

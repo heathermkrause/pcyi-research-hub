@@ -26,4 +26,7 @@ module ApplicationHelper
   def get_new_password_error(resource)
     ("Password " +resource.errors[:password][0]) if (!resource.errors[:password].blank? && resource.errors[:password].present?)
   end
+
+
+  
 end

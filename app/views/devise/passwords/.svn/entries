@@ -1,7 +1,7 @@
 10
 
 dir
-68
+99
 http://192.168.1.74/svn/document_management_1.0/trunk/document_management_final/app/views/devise/passwords
 http://192.168.1.74/svn/document_management_1.0
 
@@ -25,40 +25,6 @@ Chaitali
 
 
 1b3d3a05-b161-4316-ba32-6fcf2f124411
-
-new.html.erb
-file
-
-
-
-
-2013-12-03T13:59:43.324696Z
-62d635b1e2299c899bf680122586375f
-2013-12-03T13:58:43.658909Z
-61
-Chaitali
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-12522
 
 edit.html.erb
 file
@@ -93,4 +59,38 @@ Chaitali
 
 
 1593
+
+new.html.erb
+file
+
+
+
+
+2013-12-03T13:59:43.324696Z
+62d635b1e2299c899bf680122586375f
+2013-12-03T13:58:43.658909Z
+61
+Chaitali
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+12522
 
