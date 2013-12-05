@@ -26,8 +26,8 @@ class Excelsheet < ActiveRecord::Base
 
   def dump_to_table
      require 'roo'
-     file = self.excelsheet_file.to_file.path
-     extension = File.extname(file)
+     file = self.excelsheet_file.to_file
+     extension = File.extname(file.path)
      excel_file(file, extension).each_with_index { |row,index|
         next if (index == 0)
         Document.dump(row,id, self.user.id)
@@ -37,8 +37,8 @@ class Excelsheet < ActiveRecord::Base
 
   def excel_file(file, extension)
   	case extension
-      when '.xls' then Roo::Excel.new(file)
-      when '.xlsx' then Roo::Excelx.new(file) 
+      when '.xls' then Roo::Excel.new(file.path)
+      when '.xlsx' then Roo::Excelx.new(file.path) 
     end
   end
 
