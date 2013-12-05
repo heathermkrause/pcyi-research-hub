@@ -1,7 +1,7 @@
 10
 
 dir
-171
+178
 http://192.168.1.74/svn/document_management_1.0/trunk/document_management_final/app/assets/images
 http://192.168.1.74/svn/document_management_1.0
 
@@ -25,111 +25,6 @@ pratik
 
 
 1b3d3a05-b161-4316-ba32-6fcf2f124411
-
-rv.png
-file
-
-
-
-
-2013-12-02T12:42:05.573213Z
-4d1a49fbea75fd9713513bb6474f1e1a
-2013-12-02T12:41:07.031919Z
-13
-Chaitali
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-4228
-
-headerBackground.png
-file
-
-
-
-
-2013-12-02T12:42:05.573213Z
-530c8076c6ed8f66f31afd0d19c2831e
-2013-12-02T12:41:07.031919Z
-13
-Chaitali
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3869
-
-img
-dir
-
-onepx.png
-file
-
-
-
-
-2013-12-02T12:42:05.573213Z
-e9f3036495fc2068c3a281232a7ea849
-2013-12-02T12:41:07.031919Z
-13
-Chaitali
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2792
 
 logo.png
 file
@@ -440,6 +335,40 @@ has-props
 images
 dir
 
+bg.jpg
+file
+
+
+
+
+2013-12-02T12:42:05.573213Z
+badc1ba40b2734a4012c9ad21d10e434
+2013-12-02T12:41:07.031919Z
+13
+Chaitali
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+17199
+
 glyphicons-halflings.png
 file
 
@@ -474,14 +403,14 @@ has-props
 
 12799
 
-bg.jpg
+f.png
 file
 
 
 
 
 2013-12-02T12:42:05.573213Z
-badc1ba40b2734a4012c9ad21d10e434
+a0e03c09cf1508a799043826ccdd9a39
 2013-12-02T12:41:07.031919Z
 13
 Chaitali
@@ -506,7 +435,7 @@ has-props
 
 
 
-17199
+3322
 
 shadow.png
 file
@@ -542,14 +471,14 @@ has-props
 
 3746
 
-f.png
+rv.png
 file
 
 
 
 
 2013-12-02T12:42:05.573213Z
-a0e03c09cf1508a799043826ccdd9a39
+4d1a49fbea75fd9713513bb6474f1e1a
 2013-12-02T12:41:07.031919Z
 13
 Chaitali
@@ -574,5 +503,76 @@ has-props
 
 
 
-3322
+4228
+
+headerBackground.png
+file
+
+
+
+
+2013-12-02T12:42:05.573213Z
+530c8076c6ed8f66f31afd0d19c2831e
+2013-12-02T12:41:07.031919Z
+13
+Chaitali
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3869
+
+img
+dir
+
+onepx.png
+file
+
+
+
+
+2013-12-02T12:42:05.573213Z
+e9f3036495fc2068c3a281232a7ea849
+2013-12-02T12:41:07.031919Z
+13
+Chaitali
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2792
 

@@ -1,13 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
-V 78
-/svn/document_management_1.0/!svn/ver/2/trunk/document_management_final/public
-END
-favicon.ico
-K 25
-svn:wc:ra_dav:version-url
-V 90
-/svn/document_management_1.0/!svn/ver/2/trunk/document_management_final/public/favicon.ico
+V 79
+/svn/document_management_1.0/!svn/ver/79/trunk/document_management_final/public
 END
 robots.txt
 K 25
@@ -32,4 +26,10 @@ K 25
 svn:wc:ra_dav:version-url
 V 87
 /svn/document_management_1.0/!svn/ver/2/trunk/document_management_final/public/422.html
+END
+favicon.ico
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/document_management_1.0/!svn/ver/2/trunk/document_management_final/public/favicon.ico
 END

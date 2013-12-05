@@ -152,11 +152,11 @@
 
 
 
-  <footer style="width:100%; background:#999; padding:15px; margin-top:18.5%; position:fixed;">
-    <div class="container">
-      &#169;&nbsp;<%= Time.now.year %> All rights are reserved.
-    </div>
-  </footer>
+ <!-- <%#*<footer style="width:100%; background:#999; padding:15px; margin-top:18.5%; position:fixed;">%>
+    <%#*<div class="container">%>
+      <%#*&#169;&nbsp;<%= Time.now.year %> All rights are reserved.%>
+    <%#*</div>%>
+  <%#*</footer>%> -->
 
 
   <!-- end container -->

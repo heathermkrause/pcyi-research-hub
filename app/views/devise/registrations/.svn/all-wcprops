@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 104
-/svn/document_management_1.0/!svn/ver/111/trunk/document_management_final/app/views/devise/registrations
+/svn/document_management_1.0/!svn/ver/175/trunk/document_management_final/app/views/devise/registrations
 END
 edit.html.erb
 K 25
@@ -13,5 +13,5 @@ new.html.erb
 K 25
 svn:wc:ra_dav:version-url
 V 117
-/svn/document_management_1.0/!svn/ver/111/trunk/document_management_final/app/views/devise/registrations/new.html.erb
+/svn/document_management_1.0/!svn/ver/175/trunk/document_management_final/app/views/devise/registrations/new.html.erb
 END

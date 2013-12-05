@@ -129,13 +129,26 @@
     </div>
 
   </div>
+
+
+
 </div>
 
+
+<<<<<<< .mine
 <footer style="width:100%; background:#999; padding:15px; margin-top:12%;margin-left:-2%; position:relative;">
   <div class="container">
     &#169;&nbsp;<%= Time.now.year %> All rights are reserved.
   </div>
 </footer>
+=======
+<%#*<footer style="width:100%; background:#999; padding:15px; margin-top:12%;margin-left:-2%; position:fixed;">%>
+  <%#*<div class="container">%>
+    <%#*&#169;&nbsp;<%= Time.now.year %>
+    <%#*All rights are reserved.%>
+  <%#*</div>%>
+<%#*</footer>%>
+>>>>>>> .r178
 <script type="text/javascript">
   $(document).ready(function () {
     $("#keywords").tokenInput("/keywords/get_keywords", {
