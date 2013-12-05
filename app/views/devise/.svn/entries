@@ -1,7 +1,7 @@
 10
 
 dir
-178
+179
 http://192.168.1.74/svn/document_management_1.0/trunk/document_management_final/app/views/devise
 http://192.168.1.74/svn/document_management_1.0
 
@@ -26,6 +26,15 @@ pratik
 
 1b3d3a05-b161-4316-ba32-6fcf2f124411
 
+confirmations
+dir
+
+registrations
+dir
+
+unlocks
+dir
+
 passwords
 dir
 
@@ -36,14 +45,5 @@ shared
 dir
 
 mailer
-dir
-
-confirmations
-dir
-
-registrations
-dir
-
-unlocks
 dir
 
