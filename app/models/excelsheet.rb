@@ -27,6 +27,9 @@ class Excelsheet < ActiveRecord::Base
   def dump_to_table
      require 'roo'
      file = self.excelsheet_file.to_file
+     puts "------------------------------------------------"
+     puts file.path
+     puts "------------------------------------------------"
      extension = File.extname(file.path)
      excel_file(file, extension).each_with_index { |row,index|
         next if (index == 0)
