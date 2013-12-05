@@ -28,7 +28,7 @@ class Excelsheet < ActiveRecord::Base
      require 'roo'
      file = self.excelsheet_file.to_file
      puts "------------------------------------------------"
-     puts file.path
+     puts "file path: "+file.path.to_s
      puts "------------------------------------------------"
      extension = File.extname(file.path)
      excel_file(file, extension).each_with_index { |row,index|
