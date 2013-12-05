@@ -31,7 +31,10 @@ class Document < ActiveRecord::Base
       row[3] = nil
     end
     puts "creating doc"
-    doc = create!(:report_name => row[0], :author => row[1], :sponsoring_orgnization => row[2], :date_of_report => row[3], :key_recommendations => row[5], :key_ages => row[7], :notes_on_mythodology => row[8], :target_population => row[9], :data_availablity => row[10], :user_id => user_id)
+    f = new(:report_name => row[0], :author => row[1], :sponsoring_orgnization => row[2], :date_of_report => row[3], :key_recommendations => row[5], :key_ages => row[7], :notes_on_mythodology => row[8], :target_population => row[9], :data_availablity => row[10], :user_id => user_id)
+    puts "valid doc? "+f.valid?
+    f.save
+    doc = f
     puts "created doc with "+ doc.id.to_s
     Keyword.create_keywords(row[6],doc.id) if !row[6].nil?
     puts "creating finding"
