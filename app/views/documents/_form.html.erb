@@ -102,82 +102,6 @@
 </div>
 
 
-<% 
-=begin %>
-<%= form_tag("/excelsheets/new", :multipart => true) do %>
-  <%= file_field_tag "excelsheet[excelsheet_file]" %>
-  <%= submit_tag "upload" %>
-<% end %>
-
-
-<%= form_for(@document) do |f| %>
-  <% if @document.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@document.errors.count, "error") %> prohibited this document from being saved:</h2>
-
-      <ul>
-        <% @document.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :report_name %><br />
-    <%= f.text_field :report_name %>
-  </div>
-  <div class="field">
-    <%= f.label :author %><br />
-    <%= f.text_field :author %>
-  </div>
-  <div class="field">
-    <%= f.label :sponsoring_orgnization %><br />
-    <%= f.text_field :sponsoring_orgnization %>
-  </div>
-  <div class="field">
-    <%= f.label :date_of_report %><br />
-    <%= f.date_select :date_of_report %>
-  </div>
-  <div class="field">
-    <%= f.label :key_findings %><br />
-    <%= f.text_area :key_findings %>
-  </div>
-  <div class="field">
-    <%= f.label :key_recommendations %><br />
-    <%= f.text_area :key_recommendations %>
-  </div>
-  <div class="field">
-    <%= f.label :keywords %><br />
-    <%= f.text_area :keywords %>
-  </div>
-  <div class="field">
-    <%= f.label :key_ages %><br />
-    <%= f.text_field :key_ages %>
-  </div>
-  <div class="field">
-    <%= f.label :notes_on_mythodology %><br />
-    <%= f.text_area :notes_on_mythodology %>
-  </div>
-  <div class="field">
-    <%= f.label :target_population %><br />
-    <%= f.text_field :target_population %>
-  </div>
-  <div class="field">
-    <%= f.label :data_availablity %><br />
-    <%= f.text_field :data_availablity %>
-  </div>
-  <div class="field">
-    <%= f.label :user_id %><br />
-    <%= f.number_field :user_id %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
-%>
-  <%
-=end %>
 <footer style="width:100%; background:#999; padding:15px; margin-top:12%;margin-left:-2%; position:fixed;">
   <div class="container">
     &#169;&nbsp;<%= Time.now.year %> All rights are reserved.
@@ -191,4 +115,3 @@
     });
   });
 </script>
-

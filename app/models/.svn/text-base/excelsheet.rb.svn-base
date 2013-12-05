@@ -29,7 +29,7 @@ class Excelsheet < ActiveRecord::Base
      extension = File.extname(file)
      excel_file(file, extension).each_with_index { |row,index|
         next if (index == 0)
-        Document.dump(row,id)
+        Document.dump(row,id, self.user.id)
      }
 
   end

@@ -45,7 +45,7 @@
               <div style="width:361px; height:270px;">
   <%#*<p class="title">Slide 1</p>%>
                 <p class="txt">
-                  <img src="<%= key_finding.keyfinding_image.url unless key_finding.keyfinding_image.blank? %>" border="0" alt="" title=""/>
+                  <img src="<%= key_finding.keyfinding_image.url(nil,:expires_in => 1.minutes) unless key_finding.keyfinding_image.blank? %>" border="0" alt="" title=""/>
                   <%= key_finding.keyfinding_text %>
                 </p>
               </div>
@@ -94,9 +94,8 @@
             </table>
 
 
-
             <div class="pagination pagination-centered">
-              <%= will_paginate @documents,
+              <%= will_paginate @documents.paginate(:page => params[:page]),
                 :previous_label => t("will_paginate.previous_label"),
                 :next_label     => t("will_paginate.next_label") %>
             </div>
@@ -174,7 +173,7 @@
   <script type="text/javascript" language="javascript" src="js/jquery.jcontent.0.8.min.js"></script>
 
   <script type="text/javascript" language="javascript">
-/*
+
     $("document").ready(function(){
 
       //demo5
@@ -188,7 +187,7 @@
 
      
     });
-*/
+
     function setId(id){
       $("#doc_id").val(id);
     }

@@ -5,8 +5,8 @@ class DocumentsController < ApplicationController
   before_filter :authenticate_user!
   
   def index
-    @documents = Document.paginate(:page => params[:page])
-    @keyfinding_of_document = Keyfinding.all
+    @documents = current_user.documents.paginate(:page => params[:page])
+    @keyfinding_of_document = @documents.empty? ? [] : Keyfinding.where(:document_id => @documents.all.map(&:id))
     @keyword = Keyword.new
     respond_to do |format|
       format.html # index.html.erb
@@ -99,6 +99,18 @@ class DocumentsController < ApplicationController
   end
 
   def search
+    @documents = current_user.documents.joins([:keywords,:keyfindings]).where("keyword_text LIKE :search OR keyfinding_text LIKE :search ", :search => "%#{params[:search]}%")
+    @keyfinding_of_document = @documents.empty? ? [] : Keyfinding.where(:document_id => @documents.all.map(&:id))
+    @keyword = Keyword.new
+
+    unless @documents.empty?
+       respond_to do |format|
+        format.html { render :index }
+        format.json { render json: @documents }
+      end
+    else
+       #error handeling code
+    end
   end
 
 end

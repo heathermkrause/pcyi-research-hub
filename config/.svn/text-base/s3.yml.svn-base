@@ -4,11 +4,11 @@ development:
   bucket: pcyidocs
 
 test:
-  access_key_id:
-  secret_access_key:
-  endpoint:
+  access_key_id: AKIAICUMJMABHV2UE3OA
+  secret_access_key: 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
+  bucket: pcyidocs
 
 production:
-  access_key_id:
-  secret_access_key:
-  endpoint: 
+  access_key_id: AKIAICUMJMABHV2UE3OA
+  secret_access_key: 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
+  bucket: pcyidocs 
