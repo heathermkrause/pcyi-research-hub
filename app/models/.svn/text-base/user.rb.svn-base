@@ -7,7 +7,10 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me, :name, :excelsheets_attributes
 
-  validates :name, :presence => {:message => "Name can't be blank"}
+  validates_presence_of :name
+  validates_format_of :name, :with => /^[^0-9`!@#\$%\^&*+_=]+$/ , :message => "Name is invalid"
+
+  validates_length_of :name, :maximum => 100, :message=> "less than %d if you don't mind"
   # attr_accessible :title, :body
 
   has_many :documents

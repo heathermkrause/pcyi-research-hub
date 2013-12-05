@@ -270,10 +270,10 @@
         <%= form_for(resource, :as => resource_name ,:url => password_path(resource_name), :html => { :method => :post , :class=> "form-horizontal"} ) do |f| %>
 
           <div class="control-group">
-            <label for="contact-name" class="control-label" style="margin-left:-100px;">Email ID: &nbsp </label>
+            <label for="contact-name" class="control-label" style="margin-left:-100px;height:90px;line-height:42px;">Email ID: &nbsp </label>
             <div class="controls" style="margin-left:111px;" >
               <%= f.text_field :email, :id => "contact-name" ,  :onfocus=>"javascript: this.value = '';",:required=>true, :placeholder=>"Email Id" , :style=>"background-image:none;padding-left:-40px;"  %>
-            <span class="errors"> <%=  get_forget_password_error(resource) if get_forget_password_error(resource) %></span>
+            <!--<%#*<span class="errors"> <%=  get_forget_password_error(resource) if get_forget_password_error(resource) %></span>%>-->
             </div>
           </div>
 
@@ -287,3 +287,10 @@
       </section><!-- content -->
     </div><!-- container -->
 </body>
+ <footer style="width:100%; background:#999; padding:15px; position:absolute; bottom:0;">
+    <div class="">
+      <center>
+      &copy;&nbsp;2013 All rights are reserved.
+      </center>
+    </div>
+  </footer>

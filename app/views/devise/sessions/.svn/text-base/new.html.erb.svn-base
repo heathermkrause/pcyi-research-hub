@@ -275,12 +275,15 @@
           <div>
             <%= f.password_field :password , :id=>"password" , :required=>true , :placeholder=> "Password"  %>
           </div>
-          <div>
+          <div style="float:left;vertical-align:middle;">
             <% if devise_mapping.rememberable? -%>
-              <div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
+            <span style="margin-left:13px;"><%= f.check_box :remember_me, {:style => "vertical-align:text-top;"} %>  Remember me
             <% end %>
+            
           </div>
           <div>
+              <br/>
+        
             <%= f.submit "Log in" %>
             <a href="<%= new_password_path(resource_name) %>"  data-toggle="modal" data-target="">Forget password?</a>
             <!--<a href="#">Register</a>-->
@@ -292,29 +295,12 @@
       </section><!-- content -->
     </div><!-- container -->
 
-    <!--<%#*<div class="modal hide fade" id="modal-contact-form">%>
-      <%#*<div class="modal-header">%>
-        <%#*<button class="close" data-dismiss="modal">&times;</button>%>
-        <%#*<h3>Forget Password</h3>%>
-      <%#*</div>%>
 
-      <%#*<div class="modal-body">%>
-        <%#= form_for(resource, :as => resource_name ,:url => password_path(resource_name), :html => { :method => :post , :class=> "form-horizontal"} ) do |f| %>
-          <%#*<div class="control-group">%>
-            <%#*<label for="contact-name" class="control-label">Email ID: &nbsp </label>%>
-            <%#*<div class="controls">%>
-              <%#= f.text_field :email, :id => "contact-name" , :required=>true, :placeholder=>"Email Id" %>
-            <%#*</div>%>
-          <%#*</div>%>
-
-          <%#*<div class="control-group">%>
-            <%#*<div class="controls">%>
-              <%#= f.submit "Send" , :class=>"btn btn-primary"%>
-            <%#*</div>%>
-          <%#*</div>%>
-        <%# end %>
-      <%#*</div>%>
-
-
-    <%#*</div>%>-->
  </body>
+ <footer style="width:100%; background:#999; padding:15px; position:absolute; bottom:0;">
+    <div class="">
+      <center>
+      &copy;&nbsp;2013 All rights are reserved.
+      </center>
+    </div>
+  </footer>

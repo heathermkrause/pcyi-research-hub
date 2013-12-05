@@ -12,11 +12,13 @@ module ApplicationHelper
   end
 
   def get_password_error(resource)
+    return "" if resource.errors[:password][0] == "doesn't match confirmation"
     ("Password " +resource.errors[:password][0]) if (!resource.errors[:password].blank? && resource.errors[:password].present?)
   end
 
   def get_confirm_password_error(resource)
-    ("Confirm password " +resource.errors[:password_confirmation][0]) if (!resource.errors[:password_confirmation].blank? && resource.errors[:password_confirmation].present?)
+    return "Passwords don't match." if resource.errors[:password][0] == "doesn't match confirmation"
+    ("Confirm Password " +resource.errors[:password][0]) if (!resource.errors[:password].blank? && resource.errors[:password].present?)
   end
 
   def get_confirm_password_error_for_reset(resource)

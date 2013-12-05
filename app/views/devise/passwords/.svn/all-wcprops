@@ -1,17 +1,17 @@
 K 25
 svn:wc:ra_dav:version-url
-V 99
-/svn/document_management_1.0/!svn/ver/61/trunk/document_management_final/app/views/devise/passwords
-END
-new.html.erb
-K 25
-svn:wc:ra_dav:version-url
-V 112
-/svn/document_management_1.0/!svn/ver/61/trunk/document_management_final/app/views/devise/passwords/new.html.erb
+V 100
+/svn/document_management_1.0/!svn/ver/119/trunk/document_management_final/app/views/devise/passwords
 END
 edit.html.erb
 K 25
 svn:wc:ra_dav:version-url
+V 114
+/svn/document_management_1.0/!svn/ver/119/trunk/document_management_final/app/views/devise/passwords/edit.html.erb
+END
+new.html.erb
+K 25
+svn:wc:ra_dav:version-url
 V 113
-/svn/document_management_1.0/!svn/ver/61/trunk/document_management_final/app/views/devise/passwords/edit.html.erb
+/svn/document_management_1.0/!svn/ver/110/trunk/document_management_final/app/views/devise/passwords/new.html.erb
 END

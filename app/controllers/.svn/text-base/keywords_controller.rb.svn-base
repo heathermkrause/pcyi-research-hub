@@ -49,7 +49,7 @@ class KeywordsController < ApplicationController
 
     respond_to do |format|
       if @keyword.save
-        format.html { redirect_to @keyword, notice: 'Keyword was successfully created.' }
+        format.html { redirect_to(:controller => "documents", :action => "index", notice: 'Keyword was successfully created.') }
         format.json { render json: @keyword, status: :created, location: @keyword }
       else
         format.html { render action: "new" }

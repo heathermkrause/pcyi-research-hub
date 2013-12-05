@@ -192,4 +192,3 @@
       $("#doc_id").val(id);
     }
   </script>
-

@@ -9,6 +9,9 @@
 
     </div>
   </div>
+  <% unless devise_error_messages!.blank? %>
+    <p class="alert">          <%= devise_error_messages! %> </p>
+  <% end %>
   <div class="container">
     <div class="row">
       <div class="span3"></div>
@@ -16,7 +19,7 @@
         <h1 style="height:6px;"></h1>
         <%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :put, :class=>"form-horizontal" }) do |f| %>
 
-          <%= devise_error_messages! %>
+
           <%= f.hidden_field :reset_password_token %>
           <div class="control-group">
             <label class="control-label">New Password &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
@@ -53,3 +56,9 @@
 
   </div>
 </body>
+<footer style="width:100%; background:#999; padding:15px; position:absolute; bottom:0;">
+  <div class="container">  <center>
+      &copy;&nbsp;2013 All rights are reserved.
+    </center>
+  </div>
+</footer>

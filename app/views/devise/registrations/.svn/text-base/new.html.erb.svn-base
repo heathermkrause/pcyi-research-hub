@@ -4,6 +4,8 @@
   <style>
     .errors{
       color :#FF0000;
+      float:left;
+      padding-left:53px;
     }
   </style>
 
@@ -23,7 +25,7 @@
   <!--[if lt IE 9]>
 		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
-<div id="headerSection">
+  <div id="headerSection">
     <div class="container">
       <div style="width:100%; float:left;">
         <center><h1><img src="<%= image_path('logo.png') %>"></h1></center>
@@ -33,6 +35,14 @@
 
     </div>
   </div>
+        <% if get_name_error(resource) || get_email_error(resource) || get_password_error(resource) || get_confirm_password_error(resource) %>
+  <p class="alert">
+    <%=  get_name_error(resource) if get_name_error(resource) %> <br/>
+    <%= get_email_error(resource) if get_email_error(resource) %><br/>
+    <%= get_password_error(resource) if get_password_error(resource) %><br/>
+    <%= get_confirm_password_error(resource) if get_confirm_password_error(resource) %><br/>
+  </p>
+  <% end %>
   <div class="container">
     <div class="row">
       <div class="span2"></div>
@@ -40,45 +50,44 @@
       <div class="span8" id="content">
         <div style="width:550px; margin:0px auto;">
           <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => {:class=>"form-horizontal"}) do |f| %>
-           <!-- <%# unless devise_error_messages!.blank? %>
-              <%#*<p class="alert">      <%= devise_error_messages! %> </p>%>
-            <%# end %> -->
+
+
+        
             <h1>Sign Up</h1>
             <div class="control-group">
-              <label class="control-label">Name</label>
+              <label class="control-label">Name:</label>
               <div class="controls">
                 <%= f.text_field :name ,:required=> true,:required=>true, :placeholder=> "Name" ,:class=>"input-xlarge input-prepend" %>
-                <span class="errors"> <%=  get_name_error(resource) if get_name_error(resource) %></span>
+              
               </div>
 
             </div>
 
 
             <div class="control-group">
-              <label class="control-label">Email</label>
+              <label class="control-label">Email:</label>
               <div class="controls">
                 <%= f.text_field :email , :required=> true,:required=>true, :placeholder=>"Email Id" ,:class=>"input-xlarge input-prepend" %>
-                <span class= "errors"><%= get_email_error(resource) if get_email_error(resource) %></span>
+                
 
               </div>
             </div>
 
             <div class="control-group" >
-              <label class="control-label">Password</label>
+              <label class="control-label">Password:</label>
               <div class="controls">
-       
-                  <%= f.password_field :password ,:required=> true, :class=>"input-xlarge input-prepend" ,:required=>true, :placeholder=>"Password"  %>
-                  <span class= "errors"><%= get_password_error(resource) if get_password_error(resource) %>
-                </span>
+
+                <%= f.password_field :password ,:required=> true, :class=>"input-xlarge input-prepend" ,:required=>true, :placeholder=>"Password"  %>
+                
               </div>
             </div>
 
             <div class="control-group">
-              <label class="control-label">Confirm Password</label>
+              <label class="control-label">Confirm Password:</label>
               <div class="controls">
+
                 <%= f.password_field :password_confirmation , :required=> true,:class=>"input-xlarge input-prepend",:required=>true, :placeholder=>"Confirm Password"  %>
-                <span class= "errors"><%= get_confirm_password_error(resource) if get_confirm_password_error(resource) %>
-                </span>
+              
               </div>
             </div>
 
@@ -90,18 +99,29 @@
 
                 <%= f.submit "Sign up" , :id=>"signin" %>
               </div>
-            </div>
 
+            </div>
+            <div class="button" style="padding-top:20px;">
+              <a href="<%= new_session_path(resource_name) %>">Sign in</a>
+            </div>
           <% end %> <!-- form -->
+
 
         </div>
 
       </div>
 
 
-
     </div>
+
   </div>
+
+  <footer style="width:100%; background:#999; padding:15px; position:absolute; bottom:0;">
+    <div class="container">  <center>
+      &copy;&nbsp;2013 All rights are reserved.
+      </center>
+    </div>
+  </footer>
 
 
 
@@ -111,3 +131,12 @@
   <script src="/assets/jquery-1.9.1.min.js"></script>
   <script src="/assets/main.js"></script>
 
+  <script type="text/javascript">
+    $("#signin" ).click(function() {
+      $("#user_name").removeAttr("required");
+      $("#user_email").removeAttr("required");
+      $("#user_password").removeAttr("required");
+      $("#user_password_confirmation").removeAttr("required");
+    });
+
+  </script>

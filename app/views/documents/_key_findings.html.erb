@@ -12,7 +12,7 @@
           <label for="contact-name" class="control-label">Key Finding :</label>
             
           <div class="controls">
-            <%= keyfinding_form.text_field :keyfinding_text,{:placeholder=>"Key Finding", :id=>"contact-name"} %>
+            <%= keyfinding_form.text_field :keyfinding_text,{:placeholder=>"Key Finding", :id=>"contact-name", :class => "key_finding"} %>
           </div>
         </div>
                 
@@ -20,7 +20,7 @@
           <label for="contact-name" class="control-label">Select Image :</label>
           
           <div class="controls">
-            <%= keyfinding_form.file_field :keyfinding_image,{:placeholder=>"Select Image", :id=>"contact-name"} %>
+            <%= keyfinding_form.file_field :keyfinding_image,{:placeholder=>"Select Image", :id=>"contact-name", :class=>"key_image"} %>
           </div>
 
             <%#= keyfinding_form.link_to_remove "Remove this task" %>
@@ -32,6 +32,6 @@
 
           <div class="controls">
              <%= f.link_to_add "Add a key finding", :keyfindings, "data-target" => "#findings", :class => "btn btn-primary" %>
-             <input type="submit" class="btn btn-primary" value="Save" data-dismiss="modal" />
+             <input type="submit" class="btn btn-primary" value="Save" onclick="validate();" data-dismiss="modal" />
           </div>
   </div>

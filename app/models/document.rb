@@ -3,8 +3,11 @@ class Document < ActiveRecord::Base
   belongs_to :user
   has_many :keyfindings
   has_many :keywords
+  
   accepts_nested_attributes_for :keyfindings
   self.per_page = 10
+
+ 
 
   def self.dump(row,excel_id,user_id)
   	begin

@@ -4,23 +4,31 @@
     <title>DocumentManagementFinal</title>
     <% if params[:controller]!="devise/registrations"   %>
       <%= stylesheet_link_tag    "application" %>
-      <%#= stylesheet_link_tag :all   %>
+  <%#= stylesheet_link_tag :all   %>
     <% end %>
-     <%#= javascript_include_tag :all   %>
+<%#= javascript_include_tag :all   %>
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
   </head>
+  <style>
+    
+
+  </style>
   <body>
     <%= render "shared/header" %>
-    
+
     <% unless notice.blank? %>
       <p class="notice"><%= notice %></p>
     <% end %>
-    <% unless alert.blank? %>
-      <p class="alert"><%= alert %></p>
+
+
+    <% if !alert.blank? || (params[:controller] == "devise/passwords" && !get_forget_password_error(resource).blank?) %>
+      <% if !alert.blank? %><p class="alert"><%= alert  %></p> <% end %>
+      <% if self.respond_to?(:resource) && get_forget_password_error(resource) %><p class="alert"><%=  get_forget_password_error(resource)  %></p><% end %>
     <% end %>
 
     <%= yield %>
- 
-</body>
+    <%  %>
+  </body>
+
 </html>

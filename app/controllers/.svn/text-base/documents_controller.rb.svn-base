@@ -44,11 +44,11 @@ class DocumentsController < ApplicationController
   # POST /documents
   # POST /documents.json
   def create
-    @document = Document.new(params[:document])
+    @document = current_user.documents.new(params[:document])
 
     respond_to do |format|
       if @document.save
-        format.html { redirect_to @document, notice: 'Document was successfully created.' }
+        format.html { redirect_to :action => "index", notice: 'Document was successfully created.' }
         format.json { render json: @document, status: :created, location: @document }
       else
         format.html { render action: "new" }
@@ -99,8 +99,9 @@ class DocumentsController < ApplicationController
   end
 
   def search
-    @documents = current_user.documents.joins([:keywords,:keyfindings]).where("keyword_text LIKE :search OR keyfinding_text LIKE :search ", :search => "%#{params[:search]}%")
-    @keyfinding_of_document = @documents.empty? ? [] : Keyfinding.where(:document_id => @documents.all.map(&:id))
+    require 'will_paginate/array'
+    @documents = current_user.documents.find(:all, :include => [:keyfindings,:keywords], :conditions => ["keywords.keyword_text LIKE :search OR keyfindings.keyfinding_text LIKE :search ", :search => "%#{params[:search]}%"])
+    @keyfinding_of_document = @documents.empty? ? [] : Keyfinding.where(:document_id => @documents.map(&:id))
     @keyword = Keyword.new
 
     unless @documents.empty?
@@ -110,6 +111,8 @@ class DocumentsController < ApplicationController
       end
     else
        #error handeling code
+       flash[:alert] = "No search results."
+       redirect_to :back
     end
   end
 
