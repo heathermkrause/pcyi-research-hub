@@ -19,20 +19,42 @@
       <h1 style="height:1px;"></h1>
       <div style="width:1050px; margin:0px auto;">
         <%= form_tag("/excelsheets/new", :multipart => true, :class => "form-horizontal") do %>
-          <div style="width:100%; float:left; margin-left:-25px;">
-            <div style="width:100%; float:left; margin-left:-25px;">
-              <div style="width:50%; margin:0px auto; padding:20px;">
-                <div class="control-group">
-                  <div class="controls">
-                    <%= label_tag "Select Document","Select Document",{:class => "control-label"}  %>
-                    <%= file_field_tag "excelsheet[excelsheet_file]", :class=>"input-small",:required=>"required" %>
-                    <%= submit_tag "upload", {:class => "upload_button"} %>
-                  </div>
-                  <div class="controls"><a href="#" style="width:90px; margin-top:73px;" class="btn btn-info">Or</a></div>
+
+          <div style="width:85%; float:left; margin-left:-25px; border:1px solid #999; border-radius:5px; margin-bottom:14px; margin-left:30px;">
+            <div style="width:50%; margin:0px auto; padding:20px;">
+              <div class="control-group">
+                <%= label_tag "Select Document","Select Document",{:class => "control-label", :style=>"margin-left:-50px;"}  %>
+
+                <div class="controls" style="">
+                  <%= file_field_tag "excelsheet[excelsheet_file]", :style=>"width:85px; margin-left:-100px;",:class=>"input-small",:required=>"required" %>
+
+                  <%= submit_tag "Upload" ,{:class => "btn btn-primary", :style=>"margin-left:20px;" } %>
+
+
+
                 </div>
               </div>
             </div>
+
+
+            <div style="width:100%; float:left; margin-left:-25px;">
+              <div class="control-group">
+
+                <div class="controls" style="margin-left:50px;"><a class="btn btn-info" style="width:90px;" href="#">Or</a></div>
+              </div>
+            </div>
           </div>
+
+
+
+
+
+
+
+
+
+
+
         <% end %>
       </div>
       <div style="width:1050px; margin:0px auto;">
@@ -152,20 +174,3 @@
     }
   }
 </script>
-<style>
-  .upload_button{
-    background: -moz-linear-gradient(center top , #FEE79A 0%, #FEC151 100%) repeat scroll 0 0 transparent;
-    border: 1px solid #D69E31;
-    border-radius: 30px 30px 30px 30px;
-    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.8) inset;
-    color: #85592E;
-    cursor: pointer;
-    float: left;
-    font: bold 15px Helvetica,Arial,sans-serif;
-    height: 35px;
-    margin: 20px 0 35px 15px;
-    position: relative;
-    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
-    width: 120px;
-  }
-</style>
