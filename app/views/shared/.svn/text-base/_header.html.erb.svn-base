@@ -8,14 +8,10 @@
 
       <div class="collapse nav-collapse" style="margin:10px;">
 
-        <% if request.url.eql?(documents_url) %>
-   <%= render 'documents/search' %>
-
-        <% end %>
         Logged in as <strong><%= current_user.name %></strong>.
         <ul class="nav pull-right" style="margin:10px;">
-          <li style="float:left; margin-right:20px;"><a href="/documents">Dashbord</a></li>
-          <li style="float:left; margin-right:20px;"><a href="/documents/new">Upload Documents</a></li>
+          <li style="float:left; margin-right:20px;"><a href="/documents" style="<%= get_color(documents_url) %>">Dashbord</a></li>
+          <li style="float:left; margin-right:20px;"><a href="/documents/new" style="<%= get_color(new_document_url) %>">Upload Documents</a></li>
           <li style="float:left;">
             <%= link_to "Logout", destroy_user_session_path, :method =>:delete  %>
           </li>

@@ -92,7 +92,7 @@ class DocumentsController < ApplicationController
       if excelsheet.save
         format.html { redirect_to :action => "index", notice: 'Document was successfully created.' }
       else
-        format.html { redirect_to :back }
+        format.html { redirect_to :back , :alert=> excelsheet.errors[:excelsheet_file].first}
       end
     end
 

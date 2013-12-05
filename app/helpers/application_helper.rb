@@ -29,6 +29,9 @@ module ApplicationHelper
     ("Password " +resource.errors[:password][0]) if (!resource.errors[:password].blank? && resource.errors[:password].present?)
   end
 
+  def get_color(current_url)
+    "color:#000;" if request.url == current_url
+  end
 
   
 end

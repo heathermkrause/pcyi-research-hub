@@ -12,14 +12,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
   <!-- Stylesheets -->
-<%#*<link rel="stylesheet" href="css/style.css" />%>
-<%#*<link rel="stylesheet" href="css/style2.css" />%>
-<%#*<link rel="stylesheet" href="css/custom.css" />%>
-<%#*<link href="css/demo.css" rel="stylesheet" type="text/css"/>%>
-<%#*<link href="css/jcontent.css" rel="stylesheet" type="text/css"/>%>
 
-<%#*<script src="/assets/jquery-1.9.1.min.js"></script>%>
-<%#*<script src="/js/main.js"></script>%>
 
   <!--[if lt IE 9]>
 		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -43,7 +36,7 @@
           <div class="slides">
             <% @keyfinding_of_document.each do |key_finding| %>
               <div style="width:361px; height:270px;">
-  <%#*<p class="title">Slide 1</p>%>
+
                 <p class="txt">
                   <img src="<%= key_finding.keyfinding_image.url(nil,:expires_in => 1.minutes) unless key_finding.keyfinding_image.blank? %>" border="0" alt="" title=""/>
                   <%= key_finding.keyfinding_text %>
@@ -56,6 +49,9 @@
       </div>
 
       <div class="span8" id="" style="margin-left:80px;">
+        <div style="margin:7px;">
+          <%= render 'documents/search' %>
+        </div>
         <center> <h3 style="color:#7E7E7E;">Dashboard</h3></center>
         <div style="width:735px; margin:0px auto;">
           <div style="width:100%; float:left; margin-left:-25px;">
@@ -64,7 +60,7 @@
 
 
             <table class="table table-bordered table-condensed table-hover">
-              <!--<caption>This is a default table</caption>-->
+
               <thead>
                 <tr>
                   <th width="6%">#</th>

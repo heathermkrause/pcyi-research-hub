@@ -6,6 +6,8 @@ class Keyfinding < ActiveRecord::Base
     YAML.load(File.read("#{Rails.root}/config/s3.yml"))[Rails.env]    
   end
 
+  validates_format_of :keyfinding_image, :with => %r{\.(png|jpg|jpeg)$}i, :message => "Please select image format png,jpg or jpeg."
+
   has_attached_file :keyfinding_image,
                     :storage => :aws,
                     :s3_credentials => {

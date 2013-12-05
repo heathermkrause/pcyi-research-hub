@@ -4,56 +4,21 @@
     <title>DocumentManagementFinal</title>
     <% if params[:controller]!="devise/registrations"   %>
       <%= stylesheet_link_tag    "application" %>
-  <%#= stylesheet_link_tag :all   %>
     <% end %>
-<%#= javascript_include_tag :all   %>
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
   </head>
   <style>
-    .notice{
-      background-color : #E5FFCC;
-      border-bottom-left-radius: 4px;
-      border-bottom-right-radius: 4px;
-
-      border-bottom-width: 1px; border-image-width: 1 1 1 1;
-      border-left-color-ltr-source: physical;
-      border-left-color-rtl-source: physical;
-      border-left-color-value: #FBEED5;
-      border-left-style-ltr-source: physical;
-      border-left-style-rtl-source: physical;
-      border-left-style-value: solid;
-      border-left-width-ltr-source: physical;
-      border-left-width-rtl-source: physical;
-      border-left-width-value: 1px;
-      border-right-color-ltr-source: physical;
-      border-right-color-rtl-source: physical;
-      border-right-color-value: #FBEED5;
-      border-right-style-ltr-source: physical;
-      border-right-style-rtl-source: physical;
-      border-right-style-value: solid;
-      border-right-width-ltr-source: physical;
-      border-right-width-rtl-source: physical;
-      border-right-width-value: 1px;
-      border-top-color: #FBEED5;
-      border-top-left-radius: 4px;
-      border-top-right-radius: 4px;
-      border-top-style: solid;
-      border-top-width: 1px;
-      margin-bottom: 20px;
-      padding-bottom: 8px;
-      padding-left: 14px;
-      padding-right: 35px;
-      padding-top: 8px;
-      text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
-    }
+    
 
   </style>
   <body>
     <%= render "shared/header" %>
-
-    <% unless notice.blank? %>
-      <p class="notice"><%= notice %></p>
+    <% if !notice.blank? || !params[:notice].blank?  %>
+      <% notice = params[:notice] if !params[:notice].blank? %>
+      <% unless notice.blank? %>
+    <p class="notice"><%= notice %></p>
+    <% end %>
     <% end %>
 
 

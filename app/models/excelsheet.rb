@@ -5,6 +5,7 @@ class Excelsheet < ActiveRecord::Base
     YAML.load(File.read("#{Rails.root}/config/s3.yml"))[Rails.env]    
   end
 
+  validates_format_of :excelsheet_file, :with => %r{\.(xls|xlsx)$}i, :message => "Please select xls or xlsx file."
   has_attached_file :excelsheet_file,
                     :storage => :aws,
                     :s3_credentials => {
