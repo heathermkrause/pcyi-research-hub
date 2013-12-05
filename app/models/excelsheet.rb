@@ -30,6 +30,7 @@ class Excelsheet < ActiveRecord::Base
      extension = File.extname(file.path)
      excel_file(file, extension).each_with_index { |row,index|
         next if (index == 0)
+        puts "dumping doc"
         Document.dump(row,id, self.user.id)
      }
 
