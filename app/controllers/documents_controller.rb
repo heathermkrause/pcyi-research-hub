@@ -99,8 +99,9 @@ class DocumentsController < ApplicationController
   end
 
   def search
-    @documents = current_user.documents.joins([:keywords,:keyfindings]).where("keyword_text LIKE :search OR keyfinding_text LIKE :search ", :search => "%#{params[:search]}%")
-    @keyfinding_of_document = @documents.empty? ? [] : Keyfinding.where(:document_id => @documents.all.map(&:id))
+    require 'will_paginate/array'
+    @documents = current_user.documents.find(:all, :include => [:keyfindings,:keywords], :conditions => ["keywords.keyword_text LIKE :search OR keyfindings.keyfinding_text LIKE :search ", :search => "%#{params[:search]}%"])
+    @keyfinding_of_document = @documents.empty? ? [] : Keyfinding.where(:document_id => @documents.map(&:id))
     @keyword = Keyword.new
 
     unless @documents.empty?

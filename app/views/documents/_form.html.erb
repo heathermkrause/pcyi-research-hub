@@ -61,7 +61,9 @@
 
             <div class="control-group">
               <label class="control-label">Date of Report</label>
-              <div class="controls"><input type="text" id="datepicker" placeholder="Date of Report" class="hasDatepicker" required="" name="document[date_of_report]"></div>
+              <div class="controls">
+                <%= f.datepicker :date_of_report %>
+                </div>
             </div>
 
             <div class="control-group">
@@ -84,7 +86,7 @@
 
           <div class="control-group">
             <div class="controls">
-              <p style="margin-left:142px;"><button id="signin" type="submit">Upload</button></p>
+              <p style="margin-left:142px;"><button id="signin" type="submit">Submit</button></p>
             </div>
           </div>
 
