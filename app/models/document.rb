@@ -10,8 +10,9 @@ class Document < ActiveRecord::Base
   self.per_page = 10
 
   validates_presence_of :key_ages, :report_name
-  
-  validates_length_of :report_name, :maximum => 200, :message=> "less than %d if you don't mind"
+
+  validates_length_of :report_name, :maximum => 60, :message=> "less than %d if you don't mind"
+
   def self.dump(row,excel_id,user_id)
   	begin
       Date.parse(row[3])
