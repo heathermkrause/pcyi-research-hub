@@ -30,7 +30,7 @@ module ApplicationHelper
   end
 
   def get_color(current_url)
-    "color:#000;" if request.url == current_url
+    "color:#000;" if request.url == current_url || (url_for(:controller => params[:controller], :action => params[:action] , :host => request.host, :port => request.port) == current_url)
   end
 
   

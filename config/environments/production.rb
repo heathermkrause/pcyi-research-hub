@@ -65,4 +65,15 @@ DocumentManagementFinal::Application.configure do
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
   config.action_mailer.default_url_options = { :host => 'http://sheltered-shelf-2154.herokuapp.com' }
+  
+  ActionMailer::Base.smtp_settings = {
+    :address => "smtp.gmail.com",
+    :port => 587,
+    :domain => "gmail.com",
+    :user_name => "pcyldocumentmangement@gmail.com",
+    :password => "pcyl12345",
+    :authentication => "plain",
+    :enable_starttls_auto => true
+  }
+
 end
