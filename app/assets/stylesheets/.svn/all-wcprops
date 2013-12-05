@@ -3,6 +3,30 @@ svn:wc:ra_dav:version-url
 V 96
 /svn/document_management_1.0/!svn/ver/157/trunk/document_management_final/app/assets/stylesheets
 END
+keyfindings.css.scss
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/document_management_1.0/!svn/ver/52/trunk/document_management_final/app/assets/stylesheets/keyfindings.css.scss
+END
+token-input-facebook.css
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/document_management_1.0/!svn/ver/53/trunk/document_management_final/app/assets/stylesheets/token-input-facebook.css
+END
+demo.css
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/document_management_1.0/!svn/ver/20/trunk/document_management_final/app/assets/stylesheets/demo.css
+END
+jcontent.css
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/document_management_1.0/!svn/ver/20/trunk/document_management_final/app/assets/stylesheets/jcontent.css
+END
 custom.css
 K 25
 svn:wc:ra_dav:version-url
@@ -37,13 +61,19 @@ style.css
 K 25
 svn:wc:ra_dav:version-url
 V 106
-/svn/document_management_1.0/!svn/ver/122/trunk/document_management_final/app/assets/stylesheets/style.css
+/svn/document_management_1.0/!svn/ver/172/trunk/document_management_final/app/assets/stylesheets/style.css
 END
 keywords.css.scss
 K 25
 svn:wc:ra_dav:version-url
 V 113
 /svn/document_management_1.0/!svn/ver/52/trunk/document_management_final/app/assets/stylesheets/keywords.css.scss
+END
+notice.css
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/document_management_1.0/!svn/ver/173/trunk/document_management_final/app/assets/stylesheets/notice.css
 END
 style2.css
 K 25
@@ -56,28 +86,4 @@ K 25
 svn:wc:ra_dav:version-url
 V 110
 /svn/document_management_1.0/!svn/ver/2/trunk/document_management_final/app/assets/stylesheets/application.css
-END
-keyfindings.css.scss
-K 25
-svn:wc:ra_dav:version-url
-V 116
-/svn/document_management_1.0/!svn/ver/52/trunk/document_management_final/app/assets/stylesheets/keyfindings.css.scss
-END
-token-input-facebook.css
-K 25
-svn:wc:ra_dav:version-url
-V 120
-/svn/document_management_1.0/!svn/ver/53/trunk/document_management_final/app/assets/stylesheets/token-input-facebook.css
-END
-demo.css
-K 25
-svn:wc:ra_dav:version-url
-V 104
-/svn/document_management_1.0/!svn/ver/20/trunk/document_management_final/app/assets/stylesheets/demo.css
-END
-jcontent.css
-K 25
-svn:wc:ra_dav:version-url
-V 108
-/svn/document_management_1.0/!svn/ver/20/trunk/document_management_final/app/assets/stylesheets/jcontent.css
 END

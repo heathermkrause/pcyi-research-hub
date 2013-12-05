@@ -9,5 +9,9 @@ class ApplicationController < ActionController::Base
   def error_messages(error_object)
     error_object.full_messages.join("</br>")
   end
+  
+  def after_sign_out_path_for(resource_or_scope)
+    "/users/sign_in"
+  end
 
 end

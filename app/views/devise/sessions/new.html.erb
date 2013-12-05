@@ -270,14 +270,14 @@
           <h1>Login</h1>
 
           <div>
-            <%= f.text_field :email , :id=>"username" , :required=>true, :placeholder=> "Email Id" %>
+            <%= f.text_field :email , :id=>"username" , :required=>true, :placeholder=> "Email Id", :style => "padding: 11px 10px 15px 40px;" %>
           </div>
           <div>
-            <%= f.password_field :password , :id=>"password" , :required=>true , :placeholder=> "Password"  %>
+            <%= f.password_field :password , :id=>"password" , :required=>true , :placeholder=> "Password", :style => "padding: 11px 10px 15px 40px;"  %>
           </div>
           <div style="float:left;vertical-align:middle;">
             <% if devise_mapping.rememberable? -%>
-            <span style="margin-left:13px;"><%= f.check_box :remember_me, {:style => "vertical-align:text-top;"} %>  Remember me
+            <span style="margin-left:13px;"><%= f.check_box :remember_me, {:style => "vertical-align:inherit;"} %>  Remember me
             <% end %>
             
           </div>

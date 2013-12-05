@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 93
-/svn/document_management_1.0/!svn/ver/160/trunk/document_management_final/app/views/documents
+/svn/document_management_1.0/!svn/ver/170/trunk/document_management_final/app/views/documents
 END
 show.html.erb
 K 25
@@ -13,7 +13,7 @@ _form.html.erb
 K 25
 svn:wc:ra_dav:version-url
 V 108
-/svn/document_management_1.0/!svn/ver/160/trunk/document_management_final/app/views/documents/_form.html.erb
+/svn/document_management_1.0/!svn/ver/170/trunk/document_management_final/app/views/documents/_form.html.erb
 END
 _search.html.erb
 K 25

@@ -1,7 +1,7 @@
 10
 
 dir
-163
+171
 http://192.168.1.74/svn/document_management_1.0/trunk/document_management_final/app/views/devise/registrations
 http://192.168.1.74/svn/document_management_1.0
 
@@ -25,40 +25,6 @@ Chaitali
 
 
 1b3d3a05-b161-4316-ba32-6fcf2f124411
-
-new.html.erb
-file
-
-
-
-
-2013-12-05T07:57:23.430399Z
-0cd55f794c550853325063f74986b8fc
-2013-12-05T07:18:22.131272Z
-111
-Chaitali
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-4326
 
 edit.html.erb
 file
@@ -93,4 +59,38 @@ Chaitali
 
 
 1155
+
+new.html.erb
+file
+
+
+
+
+2013-12-05T07:57:23.430399Z
+0cd55f794c550853325063f74986b8fc
+2013-12-05T07:18:22.131272Z
+111
+Chaitali
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4326
 

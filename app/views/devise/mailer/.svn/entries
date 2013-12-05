@@ -1,14 +1,14 @@
 10
 
 dir
-163
+171
 http://192.168.1.74/svn/document_management_1.0/trunk/document_management_final/app/views/devise/mailer
 http://192.168.1.74/svn/document_management_1.0
 
 
 
-2013-12-05T12:35:38.752487Z
-149
+2013-12-05T14:16:51.513964Z
+165
 Chaitali
 
 
@@ -26,50 +26,16 @@ Chaitali
 
 1b3d3a05-b161-4316-ba32-6fcf2f124411
 
-unlock_instructions.html.erb
-file
-
-
-
-
-2013-12-02T10:49:38.809491Z
-4c9acd8d20ec44c47e79764dbce1580a
-2013-12-02T10:49:13.813651Z
-2
-Chaitali
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-279
-
 reset_password_instructions.html.erb
 file
 
 
 
 
-2013-12-05T13:11:25.905624Z
-b1fb21f430bd0315857a4aa6c6809a96
-2013-12-05T12:35:38.752487Z
-149
+2013-12-05T14:17:15.493461Z
+430e57185f52ed1ca24be6cc76b3533b
+2013-12-05T14:16:51.513964Z
+165
 Chaitali
 
 
@@ -92,7 +58,7 @@ Chaitali
 
 
 
-397
+393
 
 confirmation_instructions.html.erb
 file
@@ -127,4 +93,38 @@ Chaitali
 
 
 201
+
+unlock_instructions.html.erb
+file
+
+
+
+
+2013-12-02T10:49:38.809491Z
+4c9acd8d20ec44c47e79764dbce1580a
+2013-12-02T10:49:13.813651Z
+2
+Chaitali
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+279
 

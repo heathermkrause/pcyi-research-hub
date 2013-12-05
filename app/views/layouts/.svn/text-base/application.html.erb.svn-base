@@ -5,7 +5,7 @@
     <% if params[:controller]!="devise/registrations"   %>
       <%= stylesheet_link_tag "application" %>
     <% end %>
-
+    <%= stylesheet_link_tag "notice" %>
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
   </head>
@@ -13,6 +13,7 @@
   <script>
     $(document).ready(function(){
       $(".alert").fadeOut(8000);
+      $(".notice").fadeOut(8000);
     });
   </script>
 
