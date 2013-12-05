@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
-V 95
-/svn/document_management_1.0/!svn/ver/2/trunk/document_management_final/app/views/devise/mailer
+V 97
+/svn/document_management_1.0/!svn/ver/149/trunk/document_management_final/app/views/devise/mailer
 END
 confirmation_instructions.html.erb
 K 25
@@ -18,6 +18,6 @@ END
 reset_password_instructions.html.erb
 K 25
 svn:wc:ra_dav:version-url
-V 132
-/svn/document_management_1.0/!svn/ver/2/trunk/document_management_final/app/views/devise/mailer/reset_password_instructions.html.erb
+V 134
+/svn/document_management_1.0/!svn/ver/149/trunk/document_management_final/app/views/devise/mailer/reset_password_instructions.html.erb
 END

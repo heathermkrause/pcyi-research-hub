@@ -1,14 +1,14 @@
 10
 
 dir
-148
+154
 http://192.168.1.74/svn/document_management_1.0/trunk/document_management_final/app/views/devise
 http://192.168.1.74/svn/document_management_1.0
 
 
 
-2013-12-05T07:52:29.802001Z
-119
+2013-12-05T12:35:38.752487Z
+149
 Chaitali
 
 
@@ -26,6 +26,12 @@ Chaitali
 
 1b3d3a05-b161-4316-ba32-6fcf2f124411
 
+registrations
+dir
+
+unlocks
+dir
+
 passwords
 dir
 
@@ -39,11 +45,5 @@ mailer
 dir
 
 confirmations
-dir
-
-registrations
-dir
-
-unlocks
 dir
 

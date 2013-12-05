@@ -1,7 +1,7 @@
 10
 
 dir
-18
+154
 http://192.168.1.74/svn/document_management_1.0/trunk/document_management_final/nbproject
 http://192.168.1.74/svn/document_management_1.0
 
@@ -25,40 +25,6 @@ Chaitali
 
 
 1b3d3a05-b161-4316-ba32-6fcf2f124411
-
-project.properties
-file
-
-
-
-
-2013-12-02T10:49:38.865491Z
-ef698756cd78c673188f8ea34dd46f5f
-2013-12-02T10:49:13.813651Z
-2
-Chaitali
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-62
 
 project.xml
 file
@@ -96,4 +62,38 @@ Chaitali
 
 private
 dir
+
+project.properties
+file
+
+
+
+
+2013-12-02T10:49:38.865491Z
+ef698756cd78c673188f8ea34dd46f5f
+2013-12-02T10:49:13.813651Z
+2
+Chaitali
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+62
 

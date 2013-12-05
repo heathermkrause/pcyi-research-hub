@@ -51,6 +51,8 @@ class DocumentsController < ApplicationController
         format.html { redirect_to :action => "index", notice: 'Document was successfully created.' }
         format.json { render json: @document, status: :created, location: @document }
       else
+        flash[:alert] = error_messages(@document.errors)
+
         format.html { render action: "new" }
         format.json { render json: @document.errors, status: :unprocessable_entity }
       end

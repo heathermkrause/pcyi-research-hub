@@ -1,7 +1,13 @@
 K 25
 svn:wc:ra_dav:version-url
-V 91
-/svn/document_management_1.0/!svn/ver/2/trunk/document_management_final/config/initializers
+V 93
+/svn/document_management_1.0/!svn/ver/115/trunk/document_management_final/config/initializers
+END
+wrap_parameters.rb
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/document_management_1.0/!svn/ver/2/trunk/document_management_final/config/initializers/wrap_parameters.rb
 END
 inflections.rb
 K 25
@@ -12,8 +18,8 @@ END
 devise.rb
 K 25
 svn:wc:ra_dav:version-url
-V 101
-/svn/document_management_1.0/!svn/ver/2/trunk/document_management_final/config/initializers/devise.rb
+V 103
+/svn/document_management_1.0/!svn/ver/115/trunk/document_management_final/config/initializers/devise.rb
 END
 session_store.rb
 K 25
@@ -38,10 +44,4 @@ K 25
 svn:wc:ra_dav:version-url
 V 105
 /svn/document_management_1.0/!svn/ver/2/trunk/document_management_final/config/initializers/mime_types.rb
-END
-wrap_parameters.rb
-K 25
-svn:wc:ra_dav:version-url
-V 110
-/svn/document_management_1.0/!svn/ver/2/trunk/document_management_final/config/initializers/wrap_parameters.rb
 END

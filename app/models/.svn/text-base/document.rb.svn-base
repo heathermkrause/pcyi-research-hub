@@ -10,8 +10,21 @@ class Document < ActiveRecord::Base
   self.per_page = 10
 
   validates_presence_of :key_ages, :report_name
-  
+
+  validates_length_of :report_name, :maximum => 60, :message=> "less than %d if you don't mind"
+
+  validates_presence_of :key_ages, :report_name
   validates_length_of :report_name, :maximum => 200, :message=> "less than %d if you don't mind"
+  validates_length_of :author, :maximum => 50, :message => "less than %d if you don't mind"
+  validates_length_of :data_availablity, :maximum => 50, :message => "less than %d if you don't mind"
+  validates_length_of :key_ages, :maximum => 50, :message => "less than %d if you don't mind"
+  validates_length_of :key_recommendations, :maximum => 50, :message => "less than %d if you don't mind"
+  validates_length_of :notes_on_mythodology, :maximum => 50, :message => "less than %d if you don't mind"
+  validates_length_of :report_name, :maximum => 50, :message => "less than %d if you don't mind"
+  validates_length_of :sponsoring_orgnization, :maximum => 50, :message => "less than %d if you don't mind"
+  validates_length_of :target_population, :maximum => 50, :message => "less than %d if you don't mind"
+
+
   def self.dump(row,excel_id,user_id)
   	begin
       Date.parse(row[3])

@@ -2,12 +2,13 @@ class Keyfinding < ActiveRecord::Base
   attr_accessible :document_id, :keyfinding_text,:keyfinding_image
   belongs_to :document
 
+
   def self.s3_config
     YAML.load(File.read("#{Rails.root}/config/s3.yml"))[Rails.env]    
   end
 
   validates_format_of :keyfinding_image, :with => %r{\.(png|jpg|jpeg)$}i, :message => "Please select image format png,jpg or jpeg."
-
+validates_length_of :keyfinding_text, :maximum => 200, :message => "less than %d if you don't mind"
   has_attached_file :keyfinding_image,
                     :storage => :aws,
                     :s3_credentials => {
