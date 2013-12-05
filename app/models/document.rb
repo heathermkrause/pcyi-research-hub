@@ -8,12 +8,11 @@ class Document < ActiveRecord::Base
   accepts_nested_attributes_for :keywords
 
   self.per_page = 10
-
+=begin
   validates_presence_of :key_ages, :report_name
 
   validates_length_of :report_name, :maximum => 60, :message=> "less than 60 if you don't mind"
 
-  validates_presence_of :key_ages, :report_name
   validates_length_of :report_name, :maximum => 200, :message=> "less than 60 if you don't mind"
   validates_length_of :author, :maximum => 50, :message => "less than 60 if you don't mind"
   validates_length_of :data_availablity, :maximum => 50, :message => "less than 60 if you don't mind"
@@ -24,7 +23,7 @@ class Document < ActiveRecord::Base
   validates_length_of :sponsoring_orgnization, :maximum => 50, :message => "less than 60 if you don't mind"
   validates_length_of :target_population, :maximum => 50, :message => "less than 60 if you don't mind"
 
-
+=end
   def self.dump(row,excel_id,user_id)
   	begin
       Date.parse(row[3])
