@@ -280,7 +280,7 @@
           <div>
         <br/>
         
-            <%= f.submit "Log in" %>
+            <%= f.submit "Log in",{:style => "margin: 21px 0 35px -118px;"} %>
             <a href="<%= new_password_path(resource_name) %>"  data-toggle="modal" data-target="">Forget password?</a>
             <!--<a href="#">Register</a>-->
           </div>
@@ -293,7 +293,7 @@
 
 
  </body>
- <footer style="width:100%; background:#999; padding:15px; position:relative; bottom:0;">
+ <footer style="width:100%; background:#999; padding:15px; position:absolute; bottom:0;">
     <div class="">
       <center>
       &copy;&nbsp;2013 All rights are reserved.

@@ -114,7 +114,7 @@ class DocumentsController < ApplicationController
     else
        #error handeling code
        flash[:alert] = "No search results."
-       redirect_to :back
+       redirect_to :action => "index"
     end
   end
 
