@@ -16,7 +16,7 @@ DocumentManagementFinal::Application.routes.draw do
       get "search"
     end
   end
-  root :to => 'documents#index'
+  root :to => redirect("/users/sign_in")
 
   devise_for :users, :skip => [:registrations]
 
