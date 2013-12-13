@@ -1,0 +1,5 @@
+namespace :user do
+  task :create_admin => :environment do
+    User.create(:email => "admin@pcyi.com", :password => "allow2pass", :password_confirmation => "allow2pass", :admin => true)
+  end
+end

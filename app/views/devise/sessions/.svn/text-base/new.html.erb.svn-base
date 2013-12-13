@@ -285,9 +285,6 @@
             <!--<a href="#">Register</a>-->
           </div>
         <% end %><!-- form -->
-        <div class="button">
-          <a href="<%= new_registration_path(resource_name) %>">Sign Up</a>
-        </div><!-- button -->
       </section><!-- content -->
     </div><!-- container -->
 
