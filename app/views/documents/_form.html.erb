@@ -20,7 +20,7 @@
       <div style="width:1050px; margin:0px auto;">
         <%= form_tag("/excelsheets/new", :multipart => true, :class => "form-horizontal") do %>
 
-          <div style="width:92%; float:left; margin-left:-25px; border:1px solid #999; border-radius:5px; margin-bottom:14px; margin-left:30px;">
+          <div style="width:92%; float:left; margin-left:-25px; border:1px solid #999; border-radius:5px; margin-bottom:14px; margin-left:30px;height:165px">
             <h4 style="background:#2F96B4;color:white;margin-top:0px;">Upload Excel Document</h4>
             <div style="width:50%; margin:0px auto; padding:20px;">
               <div class="control-group">
@@ -28,8 +28,8 @@
 
                 <div class="controls" style="">
                   <%= file_field_tag "excelsheet[excelsheet_file]",  :accept => 'xls/xlsx',:style=>"width:85px; margin-left:-100px;",:class=>"input-small",:required=>"required" %>
-
-                  <%= submit_tag "Upload" ,{:id => "signin", :style=>"margin-left:20px;" } %>
+                  </br>
+                  <%= submit_tag "Upload" ,{:id => "signin", :style=>"margin-left:20px;margin-top:29px;" } %>
 
 
                 </div>
@@ -43,7 +43,7 @@
       <label style="color:black;margin-top:231px;width:100px;margin-left:515px;">OR</label>
       <div style="width:1050px; margin:0px auto;">
         <%= nested_form_for(@document,:html => {:class=>"form-horizontal", :onsubmit => "validate()"}) do |f| %>
-         <div style="width:92%; float:left; margin-left:-25px; border:1px solid #999; border-radius:5px; margin-bottom:14px; margin-left:30px;">
+         <div style="width:92%; float:left; margin-left:-25px; border:1px solid #999; border-radius:5px; margin-bottom:14px; margin-left:30px;height:438px;">
           <h4 style="background:#2F96B4;color:white;margin-top:0px;">Enter Manually</h4>
           <div style="width:45%; float:left;margin-top:26px">
             <div class="control-group">
