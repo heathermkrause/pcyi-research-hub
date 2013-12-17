@@ -64,11 +64,13 @@
               <thead>
                 <tr>
                   <th width="6%">#</th>
-                  <th width=<%= params[:search] ? "56%" : "76%" %>>Report Name</th>
+                  <th width=<%= params[:search] ? "74%" : "76%" %>>Report Name</th>
                   <% if params[:search] %>
                     <th width="20%">Matched keywords</th>
                   <% end %>
-                  <th width="18%">Actions</th>
+                  <% unless params[:search] %>
+                    <th width="18%">Actions</th>
+                  <% end %>
                 </tr>
               </thead>
               <tbody>
@@ -83,7 +85,9 @@
                     <% if params[:search] %>
                       <td><%= matched_keywords(report) %></td>
                     <% end %>
-                    <td onclick="setId('<%= report.id.to_s %>')"><a class="btn btn-success" href="#" data-toggle="modal" data-target="#key_word1" >Add keyword</a></td>
+                    <% unless params[:search] %>
+                      <td onclick="setId('<%= report.id.to_s %>')"><a class="btn btn-success" href="#" data-toggle="modal" data-target="#key_word1" >Add keyword</a></td>
+                    <% end %>
                   </tr>
 
 
