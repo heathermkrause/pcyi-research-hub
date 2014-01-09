@@ -6,7 +6,7 @@ class DocumentsController < ApplicationController
   
   def index
     if current_user.admin
-      @documents = Document.paginate(:page => params[:page])
+      @documents = Document.order("created_at ASC").paginate(:page => params[:page])
     else
       @documents = current_user.documents.paginate(:page => params[:page])
     end
