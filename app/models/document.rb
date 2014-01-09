@@ -36,6 +36,7 @@ class Document < ActiveRecord::Base
   validates_length_of :sponsoring_orgnization, :maximum => 100, :message => "less than 100 if you don't mind"
   validates_length_of :target_population, :maximum => 50, :message => "less than 50 if you don't mind"
   validates_format_of :pdf_url, :with =>  /(^$)|(^(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(([0-9]{1,5})?\/.*)?$)/ix,:if => lambda{ |object| object.pdf_url.present? }
+  validates_attachment :pdf, :content_type => { :content_type => "application/pdf" },:if => lambda{ |object| object.pdf.present? }
 
 
   def self.dump(row,excel_id,user_id)
