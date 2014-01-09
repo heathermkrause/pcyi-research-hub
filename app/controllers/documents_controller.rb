@@ -6,7 +6,7 @@ class DocumentsController < ApplicationController
   
   def index
     if current_user.admin
-      @documents = Document.paginate(:page => params[:page])
+      @documents = Document.find(:all, :order => "created_at ASC").paginate(:page => params[:page])
     else
       @documents = current_user.documents.paginate(:page => params[:page])
     end
@@ -105,7 +105,7 @@ class DocumentsController < ApplicationController
   end
 
   def search
-    #require 'will_paginate/array'
+    require 'will_paginate/array'
     if current_user.admin
       @documents = Document.find(:all, :include => [:keyfindings,:keywords], :conditions => ["keywords.keyword_text LIKE :search OR keyfindings.keyfinding_text LIKE :search ", :search => "%#{params[:search]}%"])
     else
