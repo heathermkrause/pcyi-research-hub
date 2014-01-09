@@ -90,11 +90,11 @@
                       <td onclick="setId('<%= report.id.to_s %>')"><a class="btn btn-success" href="#" data-toggle="modal" data-target="#key_word1" >Add keyword</a></td>
                     <% end %>
                     <td>
-                  <% if report.pdf_file_name? && report.pdf_url? %>
+<% if report.pdf_file_name? && report.pdf_url? %>
 
-                      <%= link_to "Download", report.pdf.url(:original, false), :target => '_blank', :class=>"btn btn-success" if report.pdf_file_name?%>
+                      <%= link_to "Download", report.pdf.url(nil,:expires => 10.minutes), :target => '_blank', :class=>"btn btn-success" if report.pdf_file_name?%>
                       <%else%>
-                      <%= link_to "Download", report.pdf.url(:original, false), :target => '_blank', :class=>"btn btn-success" if report.pdf_file_name?%>
+                      <%= link_to "Download", report.pdf.url(nil,:expires => 10.minutes), :target => '_blank', :class=>"btn btn-success" if report.pdf_file_name?%>
                       <%= link_to "Visit URL", report.pdf_url , :target => '_blank', :class=>"btn btn-success" if report.pdf_url? %></td>
                       <%end%>
                   </tr>
