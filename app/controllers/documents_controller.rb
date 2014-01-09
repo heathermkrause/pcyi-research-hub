@@ -105,7 +105,7 @@ class DocumentsController < ApplicationController
   end
 
   def search
-    require 'will_paginate/array'
+    #require 'will_paginate/array'
     if current_user.admin
       @documents = Document.find(:all, :include => [:keyfindings,:keywords], :conditions => ["keywords.keyword_text LIKE :search OR keyfindings.keyfinding_text LIKE :search ", :search => "%#{params[:search]}%"])
     else
@@ -125,7 +125,7 @@ class DocumentsController < ApplicationController
        redirect_to :action => "index"
     end
   end
-  
+
   def keywords
     @document = Document.find(params[:id])
      @keyword = Document.find(params[:id]).keywords.first

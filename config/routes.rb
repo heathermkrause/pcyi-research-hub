@@ -15,6 +15,9 @@ DocumentManagementFinal::Application.routes.draw do
     collection do
       get "search"
     end
+    member do
+      get "keywords"
+    end
   end
   root :to => redirect("/users/sign_in")
 
