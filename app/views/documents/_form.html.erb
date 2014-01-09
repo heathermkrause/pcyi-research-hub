@@ -42,10 +42,23 @@
       </div>
       <label style="color:black;margin-top:231px;width:100px;margin-left:524px;">OR</label>
       <div style="width:1050px; margin:0px auto;">
-        <%= nested_form_for(@document,:html => {:class=>"form-horizontal", :onsubmit => "validate()"}) do |f| %>
-         <div style="width:94%; float:left; margin-left:-25px; border:1px solid #999; border-radius:5px; margin-bottom:14px; margin-left:30px;height:438px;">
+        <%= nested_form_for(@document,:html => {:class=>"form-horizontal", :onsubmit => "validate()",:id=>"myform"}) do |f| %>
+         <div style="width:94%; float:left; margin-left:-25px; border:1px solid #999; border-radius:5px; margin-bottom:14px; margin-left:30px;height:512px;">
           <h4 style="background:#2F96B4;color:white;margin-top:0px;">Enter Manually</h4>
           <div style="width:45%; float:left;margin-top:26px">
+           <div class="control-group">
+              <label class="control-label" style="width:175px;">PDF File:</label>
+              <div class="controls" style="padding-left:32px;"> <%= f.file_field :pdf ,:id=>"pdf"%></div>
+            </div>
+             <div class="control-group">
+              <label class="control-label"></label>
+              <div class="controls">OR</div>
+            </div>
+             <div class="control-group">
+              <label class="control-label">PDF File URL:</label>
+              <div class="controls"><input type="text" placeholder="PDF URL" class=""  name="document[pdf_url]" ,id="pdf_url"></div>
+            </div>
+
             <div class="control-group">
               <label class="control-label">Report Name</label>
               <div class="controls"><input type="text" placeholder="Report Name" class="" required="" name="document[report_name]" ></div>
@@ -66,17 +79,10 @@
               <div class="controls"><input type="text" placeholder="Keywords" name="document[keywords_attributes][12345][keyword_text]" id="keywords"></div>
             </div>
 
-            <div class="control-group">
-              <label class="control-label">Notes on Methodology</label>
-              <div class="controls"><input type="text" placeholder="Notes on Methodology" class="" required="" name="document[key_ages]"></div>
-            </div>
+           
 
 
-            <div class="control-group">
-              <label class="control-label">Data Availability</label>
-              <div class="controls"><input type="text" placeholder="Data Availability" class="" required="" name="document[data_availablity]" >
-              </div>
-            </div>
+          
 
           </div>
 
@@ -107,12 +113,19 @@
               <label class="control-label">Target Population</label>
               <div class="controls"><input type="text" placeholder="Target Population" class="" required="" name="document[target_population]"></div>
             </div>
-
-
+  <div class="control-group">
+              <label class="control-label">Data Availability</label>
+              <div class="controls"><input type="text" placeholder="Data Availability" class="" required="" name="document[data_availablity]" >
+              </div>
+            </div>
+ <div class="control-group">
+              <label class="control-label">Notes on Methodology</label>
+              <div class="controls"><input type="text" placeholder="Notes on Methodology" class="" required="" name="document[key_ages]"></div>
+            </div>
           </div>
           <div class="control-group">
             <div class="controls">
-              <p style="margin-left:142px;"><button id="signin" type="submit" style="margin-left:6px;">Submit</button></p>
+              <p style="margin-left:142px;"><button id="signin" type="submit" style="margin-left:97px;">Submit</button></p>
             </div>
           </div>
           
@@ -152,7 +165,5 @@
   }
 
 
- $(":file").change(function(){
-      document.getElementById('select_document').innerHTML = $(":file").val();
-  });
+
 </script>

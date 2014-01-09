@@ -15,8 +15,8 @@
 
 
   <!--[if lt IE 9]>
-		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-	<![endif]-->
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
 
 
 
@@ -42,7 +42,7 @@
                   <%= key_finding.keyfinding_text %>
                 </p>
               </div>
-            <% end %>
+            <% end unless @keyfinding_of_document.nil? %>
           </div>
         </div>
 
@@ -71,6 +71,7 @@
                   <% unless params[:search] %>
                     <th width="18%">Actions</th>
                   <% end %>
+                   <th width="18%">PDF File</th>
                 </tr>
               </thead>
               <tbody>
@@ -88,11 +89,19 @@
                     <% unless params[:search] %>
                       <td onclick="setId('<%= report.id.to_s %>')"><a class="btn btn-success" href="#" data-toggle="modal" data-target="#key_word1" >Add keyword</a></td>
                     <% end %>
+                    <td>
+<% if report.pdf_file_name? && report.pdf_url? %>
+
+                      <%= link_to "Download", report.pdf.url(nil,:expires => 10.minutes), :class=>"btn btn-success" if report.pdf_file_name?%>
+                      <%else%>
+                      <%= link_to "Download", report.pdf.url(nil,:expires => 10.minutes), :class=>"btn btn-success" if report.pdf_file_name?%>
+                      <%= link_to "Visit URL", report.pdf_url , :target => '_blank', :class=>"btn btn-success" if report.pdf_url? %><td>
+                      <%end%>
                   </tr>
 
 
                   <% sr_no+= 1  %>
-                <% end %>
+                <% end unless @documents.nil? %>
 
               </tbody>
 
@@ -102,7 +111,7 @@
             <div class="pagination pagination-centered">
               <%= will_paginate @documents.paginate(:page => params[:page]),
                 :previous_label => t("will_paginate.previous_label"),
-                :next_label     => t("will_paginate.next_label") %>
+                :next_label     => t("will_paginate.next_label") unless @documents.nil? %>
             </div>
 
 
@@ -129,29 +138,9 @@
 
 
 
-    <div class="modal-body">
+    <div class="modal-body" id="modal_body">
 
-      <%= form_for(@keyword, :html=>{:class=>"form-horizontal"}) do |f| %>
-        <%= f.hidden_field :document_id,{:id => "doc_id"}  %>
-        <div class="control-group">
-          <label for="contact-name" class="control-label">Key Word :</label>
-
-          <div class="controls">
-            <%= f.text_field :keyword_text, :required=>"required",:id=>"contact-name", :placeholder=>"Key Word" %>
-
-          </div>
-        </div>
-
-
-
-        <div class="control-group">
-          <div class="controls">
-            <%= f.submit "Save" ,:class=>"btn btn-primary" %>
-
-            <input type="reset" class="btn btn-primary" value="Cancel" data-dismiss="modal" />
-          </div>
-        </div>
-      <% end %>
+     
     </div>
 
 
@@ -195,5 +184,11 @@
 
     function setId(id){
       $("#doc_id").val(id);
+        $.ajax({
+          url: "documents/"+id+"/keywords"
+       })
+       .done(function( data ) {
+         alert(data);
+       });
     }
   </script>

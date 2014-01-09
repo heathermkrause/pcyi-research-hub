@@ -12,7 +12,13 @@ gem 'will_paginate', '~> 3.0'
 
 gem 'roo'
 #gem 'mysql2'
-gem "pg", "~> 0.11"
+group :development do
+  gem 'mysql2'
+end
+group :production do
+  gem "pg", "~> 0.11"
+end
+
 gem "paperclip", "~> 3.0"
 gem "debugger"
 gem 'jquery-tokeninput-rails'
