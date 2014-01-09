@@ -6,7 +6,7 @@ class DocumentsController < ApplicationController
   
   def index
     if current_user.admin
-      @documents = Document.paginate(:page => params[:page])
+      @documents = Document.find(:all, :order => "created_at DESC").paginate(:page => params[:page])
     else
       @documents = current_user.documents.paginate(:page => params[:page])
     end
@@ -70,7 +70,7 @@ class DocumentsController < ApplicationController
 
     respond_to do |format|
       if @document.update_attributes(params[:document])
-         format.html { redirect_to :action => "index", notice: 'Document was successfully updated.' }
+          format.html { redirect_to :action => "index", notice: 'Document was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
