@@ -27,14 +27,14 @@ class Document < ActiveRecord::Base
 
   validates_presence_of :key_ages, :report_name
 
-  validates_length_of :report_name, :maximum => 150, :message=> "less than 150 if you don't mind"
-  validates_length_of :author, :maximum => 100, :message => "less than 100 if you don't mind"
-  validates_length_of :data_availablity, :maximum => 50, :message => "less than 50 if you don't mind"
-  validates_length_of :key_ages, :maximum => 50, :message => "less than 50 if you don't mind"
-  validates_length_of :key_recommendations, :maximum => 200, :message => "less than 200 if you don't mind"
-  validates_length_of :notes_on_mythodology, :maximum => 200, :message => "less than 200 if you don't mind"
-  validates_length_of :sponsoring_orgnization, :maximum => 100, :message => "less than 100 if you don't mind"
-  validates_length_of :target_population, :maximum => 50, :message => "less than 50 if you don't mind"
+  validates_length_of :report_name, :maximum => 150, :message=> "Report name should be less than 150"
+  validates_length_of :author, :maximum => 100, :message => "Author should be than less than 100 "
+  validates_length_of :data_availablity, :maximum => 50, :message => "Data availabilty should be less than 50"
+  validates_length_of :key_ages, :maximum => 50, :message => "Key ages should be less than 50"
+  validates_length_of :key_recommendations, :maximum => 200, :message => "Key recommendations should be less than 200"
+  validates_length_of :notes_on_mythodology, :maximum => 200, :message => "Notes on mythodology should be less than 200"
+  validates_length_of :sponsoring_orgnization, :maximum => 100, :message => "Sponsoring orgnization should be less than 100"
+  validates_length_of :target_population, :maximum => 50, :message => "Target population should be less than 50"
   validates_format_of :pdf_url, :with =>  /(^$)|(^(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(([0-9]{1,5})?\/.*)?$)/ix,:if => lambda{ |object| object.pdf_url.present? }
   validates_attachment :pdf, :content_type => { :content_type => "application/pdf" },:if => lambda{ |object| object.pdf.present? }
 
