@@ -70,7 +70,7 @@ class DocumentsController < ApplicationController
 
     respond_to do |format|
       if @document.update_attributes(params[:document])
-        format.html { redirect_to @document, notice: 'Document was successfully updated.' }
+         format.html { redirect_to :action => "index", notice: 'Document was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
