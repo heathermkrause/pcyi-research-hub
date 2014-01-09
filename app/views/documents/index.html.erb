@@ -66,12 +66,12 @@
                   <th width="6%">#</th>
                   <th width=<%= params[:search] ? "74%" : "76%" %>>Report Name</th>
                   <% if params[:search] %>
-                    <th width="20%">Matched keywords</th>
+                    <th width="auto">Matched keywords</th>
                   <% end %>
                   <% unless params[:search] %>
-                    <th width="18%">Actions</th>
+                    <th width="auto">Actions</th>
                   <% end %>
-                   <th width="18%">PDF File</th>
+                   <th width="auto">PDF File</th>
                 </tr>
               </thead>
               <tbody>

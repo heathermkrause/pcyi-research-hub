@@ -1,0 +1,20 @@
+<div id="findings"> 
+   <div class="control-group">
+    <%= f.fields_for :keyfindings do |keyfinding_form| %>
+    <label for="contact-name" class="control-label">Key Finding :</label>
+
+    <div class="controls">
+      <%= keyfinding_form.text_field :keyfinding_text,{:placeholder=>"Key Finding", :id=>"contact-name", :class => "key_finding"} %>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <label for="contact-name" class="control-label">Select Image :</label>
+
+    <div class="controls">
+      <%= keyfinding_form.file_field :keyfinding_image,{:placeholder=>"Select Image", :id=>"contact-name", :class=>"key_image"} %>
+    </div>
+  </div>
+  <%= keyfinding_form.link_to_remove "Remove this task" %>        
+  <% end %>
+</div>

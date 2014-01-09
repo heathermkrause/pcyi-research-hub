@@ -1,0 +1,22 @@
+<%= nested_form_for(@document,:html => {:class=>"form-horizontal", :onsubmit => "validate()"}) do |f| %>
+<div id="findings">
+<%= f.fields_for :keyfindings do |keyfindings_form| %>
+  <%= keyfindings_form.text_field :keyfinding_text %>
+  <%= keyfindings_form.file_field :keyfinding_image,{:placeholder=>"Select Image", :id=>"contact-name", :class=>"key_image"} %>
+  <%= keyfindings_form.link_to_remove "Remove this keyword" %>
+<% end %>
+</div>
+<p><%= f.link_to_add "Add a keyfinding", :keyfindings, "data-target" => "#findings" %></p>
+
+<div id="keywords">
+<%= f.fields_for :keywords do |keywords_form| %>
+  <%= keywords_form.text_field :keyword_text %>
+  <%= keywords_form.link_to_remove "Remove this keyword", "data-target" => "#keywords" %>
+<% end %>
+</div>
+<p><%= f.link_to_add "Add a keyword", :keywords %></p>
+
+<p>
+<%= f.submit "Update"%>
+</p>
+<% end %>
