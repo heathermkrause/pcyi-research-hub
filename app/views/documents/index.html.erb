@@ -109,7 +109,7 @@
 
 
             <div class="pagination pagination-centered">
-              <%#= will_paginate @documents.paginate(:page => params[:page]),
+              <%= will_paginate @documents.paginate(:page => params[:page]),
                 :previous_label => t("will_paginate.previous_label"),
                 :next_label     => t("will_paginate.next_label") unless @documents.nil? %>
             </div>
