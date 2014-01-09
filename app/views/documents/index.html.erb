@@ -87,7 +87,7 @@
                       <td><%= matched_keywords(report) %></td>
                     <% end %>
                     <% unless params[:search] %>
-                      <td onclick="setId('<%= report.id.to_s %>')"><a class="btn btn-success" href="#" data-toggle="modal" data-target="#key_word1" >Add keyword</a></td>
+                      <td onclick="setId('<%= report.id.to_s %>')"><a class="btn btn-success" href="#" data-toggle="modal" data-target="#key_word1" >Edit</a></td>
                     <% end %>
                     <td>
 <% if report.pdf_file_name? && report.pdf_url? %>

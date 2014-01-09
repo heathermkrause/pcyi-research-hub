@@ -125,5 +125,12 @@ class DocumentsController < ApplicationController
        redirect_to :action => "index"
     end
   end
-
+  
+  def keywords
+    @document = Document.find(params[:id])
+     @keyword = Document.find(params[:id]).keywords.first
+     respond_to do |format|
+        format.js
+     end 
+  end
 end
