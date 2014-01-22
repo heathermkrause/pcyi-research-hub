@@ -16,6 +16,7 @@ class DocumentsController < ApplicationController
     #@documents = Document.find(:all, :order => "created_at ASC").paginate(:page => params[:page])
     #@documents = current_user.documents.paginate(:page => params[:page])
 
+    # Display all documents on index
     @documents = Document.find(:all, :order => "created_at ASC")
 
     # TODO Remove if unnecessary
