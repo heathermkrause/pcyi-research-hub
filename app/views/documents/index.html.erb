@@ -54,6 +54,7 @@
                   <th width="auto">Actions</th>
                 <% end %>
                 <th width="auto">PDF File</th>
+                <th width="auro">Link</th>
               </tr>
             </thead>
             <tbody>
@@ -79,6 +80,9 @@
                     <%= link_to "Download", report.pdf.url(nil,:expires => 10.minutes), :target => '_blank', :class=>"btn btn-success" if report.pdf_file_name?%>
                     <%= link_to "Visit URL", report.pdf_url , :target => '_blank', :class=>"btn btn-success" if report.pdf_url? %></td>
                     <%end%>
+                  <td>
+                    <%= link_to 'link', report.link, target: '_blank' if report.link.present? %>
+                  </td>
                 </tr>
 
                 <% sr_no+= 1  %>

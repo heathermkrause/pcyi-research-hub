@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131213081918) do
+ActiveRecord::Schema.define(:version => 20140122174710) do
 
   create_table "documents", :force => true do |t|
     t.string   "report_name"
@@ -21,11 +21,17 @@ ActiveRecord::Schema.define(:version => 20131213081918) do
     t.text     "key_recommendations"
     t.string   "key_ages"
     t.text     "notes_on_mythodology"
-    t.string   "target_population"
-    t.string   "data_availablity"
+    t.text     "target_population"
+    t.text     "data_availablity"
     t.integer  "user_id"
     t.datetime "created_at",             :null => false
     t.datetime "updated_at",             :null => false
+    t.string   "pdf_url"
+    t.string   "pdf_file_name"
+    t.string   "pdf_content_type"
+    t.integer  "pdf_file_size"
+    t.datetime "pdf_updated_at"
+    t.string   "link"
   end
 
   create_table "excelsheets", :force => true do |t|

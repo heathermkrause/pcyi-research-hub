@@ -10,8 +10,8 @@
 #  key_recommendations    :text
 #  key_ages               :string(255)
 #  notes_on_mythodology   :text
-#  target_population      :string(255)
-#  data_availablity       :string(255)
+#  target_population      :text
+#  data_availablity       :text
 #  user_id                :integer
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
@@ -20,6 +20,7 @@
 #  pdf_content_type       :string(255)
 #  pdf_file_size          :integer
 #  pdf_updated_at         :datetime
+#  link                   :string(255)
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html

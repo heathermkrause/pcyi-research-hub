@@ -10,8 +10,8 @@
 #  key_recommendations    :text
 #  key_ages               :string(255)
 #  notes_on_mythodology   :text
-#  target_population      :string(255)
-#  data_availablity       :string(255)
+#  target_population      :text
+#  data_availablity       :text
 #  user_id                :integer
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
@@ -20,6 +20,7 @@
 #  pdf_content_type       :string(255)
 #  pdf_file_size          :integer
 #  pdf_updated_at         :datetime
+#  link                   :string(255)
 #
 
 class Document < ActiveRecord::Base
@@ -28,9 +29,11 @@ class Document < ActiveRecord::Base
   belongs_to :user
   has_many :keyfindings#,:dependent=>:destroy
   has_many :keywords#,:dependent=>:destroy
-   def self.s3_config
+
+  def self.s3_config
     YAML.load(File.read("#{Rails.root}/config/s3.yml"))[Rails.env]    
   end
+
   accepts_nested_attributes_for :keyfindings, :allow_destroy => true
   accepts_nested_attributes_for :keywords, :allow_destroy => true
 
@@ -51,16 +54,16 @@ class Document < ActiveRecord::Base
 
   validates_presence_of :key_ages, :report_name
 
-  validates_length_of :report_name, :maximum => 150, :message=> "should be less than 150"
-  validates_length_of :author, :maximum => 100, :message => "should be than less than 100 "
-  validates_length_of :data_availablity, :maximum => 50, :message => "should be less than 50"
-  validates_length_of :key_ages, :maximum => 50, :message => "should be less than 50"
-  validates_length_of :key_recommendations, :maximum => 200, :message => "should be less than 200"
-  validates_length_of :notes_on_mythodology, :maximum => 200, :message => "should be less than 200"
-  validates_length_of :sponsoring_orgnization, :maximum => 100, :message => "should be less than 100"
-  validates_length_of :target_population, :maximum => 50, :message => "should be less than 50"
-  validates_format_of :pdf_url, :with =>  /(^$)|(^(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(([0-9]{1,5})?\/.*)?$)/ix,:if => lambda{ |object| object.pdf_url.present? }
-  validates_attachment :pdf, :content_type => { :content_type => "application/pdf" },:if => lambda{ |object| object.pdf.present? }
+  #validates_length_of :report_name, :maximum => 150, :message=> "should be less than 150"
+  #validates_length_of :author, :maximum => 100, :message => "should be than less than 100 "
+  #validates_length_of :data_availablity, :maximum => 50, :message => "should be less than 50"
+  #validates_length_of :key_ages, :maximum => 50, :message => "should be less than 50"
+  #validates_length_of :key_recommendations, :maximum => 200, :message => "should be less than 200"
+  #validates_length_of :notes_on_mythodology, :maximum => 200, :message => "should be less than 200"
+  #validates_length_of :sponsoring_orgnization, :maximum => 100, :message => "should be less than 100"
+  #validates_length_of :target_population, :maximum => 50, :message => "should be less than 50"
+  #validates_format_of :pdf_url, :with =>  /(^$)|(^(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(([0-9]{1,5})?\/.*)?$)/ix,:if => lambda{ |object| object.pdf_url.present? }
+  #validates_attachment :pdf, :content_type => { :content_type => "application/pdf" },:if => lambda{ |object| object.pdf.present? }
 
 
   def self.dump(row,excel_id,user_id)

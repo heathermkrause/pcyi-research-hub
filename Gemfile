@@ -33,6 +33,8 @@ gem "paperclip-aws"
 
 gem 'pry-rails'
 gem 'randumb'
+gem 'google_drive'
+gem 'figaro'
 
 # Gems used only for assets and not required
 # in production environments by default.
