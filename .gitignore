@@ -13,3 +13,9 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+
+# Ignore Rubymine config files
+.idea
+
+# Ignore the database config file. (See database.yml.example)
+/config/database.yml

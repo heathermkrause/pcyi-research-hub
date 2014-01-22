@@ -11,13 +11,16 @@ gem 'will_paginate', '~> 3.0'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'roo'
+
 #gem 'mysql2'
 group :development do
   gem 'mysql2'
 end
-group :production do
-  gem "pg", "~> 0.11"
-end
+
+gem "pg", "~> 0.11"
+#group :production do
+#  gem "pg", "~> 0.11"
+#end
 
 gem "paperclip", "~> 3.0"
 gem "debugger"
