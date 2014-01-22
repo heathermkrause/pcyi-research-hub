@@ -16,8 +16,7 @@ class DocumentsController < ApplicationController
     #@documents = Document.find(:all, :order => "created_at ASC").paginate(:page => params[:page])
     #@documents = current_user.documents.paginate(:page => params[:page])
 
-    # Display all documents on index
-    @documents = Document.find(:all, :order => "created_at ASC")
+    @documents = Document.random(5)
 
     # TODO Remove if unnecessary
     #@keyfinding_of_document = @documents.empty? ? [] : Keyfinding.where(:document_id => @documents.all.map(&:id))

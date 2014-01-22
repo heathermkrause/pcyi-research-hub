@@ -1,40 +1,10 @@
 source 'https://rubygems.org'
 ruby '1.9.3'
 
-gem 'rails', '3.2.13'
-gem 'devise'
-gem 'therubyracer'
-gem 'execjs'
-gem 'debugger'
-gem 'will_paginate', '~> 3.0'
-
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
-
-gem 'roo'
-
-#gem 'mysql2'
-group :development do
-  gem 'mysql2'
-end
-
 gem "pg", "~> 0.11"
 #group :production do
 #  gem "pg", "~> 0.11"
 #end
-
-gem "paperclip", "~> 3.0"
-gem "debugger"
-gem 'jquery-tokeninput-rails'
-gem "nested_form"
-gem 'rails_12factor', group: :production
-gem 'jquery_datepicker'
-gem "paperclip-aws"
-
-gem 'pry-rails'
-gem 'randumb'
-gem 'google_drive'
-gem 'figaro'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -48,6 +18,23 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+gem 'rails', '3.2.13'
+gem 'devise'
+gem 'therubyracer'
+gem 'execjs'
+gem 'will_paginate', '~> 3.0'
+gem 'roo'
+gem "paperclip", "~> 3.0"
+gem "debugger"
+gem 'jquery-tokeninput-rails'
+gem "nested_form"
+gem 'rails_12factor', group: :production
+gem 'jquery_datepicker'
+gem "paperclip-aws"
+gem 'pry-rails'
+gem 'randumb'
+gem 'google_drive'
+gem 'figaro'
 gem 'jquery-rails', '~> 2.3.0'
 
 group :test, :development do
@@ -55,17 +42,7 @@ group :test, :development do
   gem 'pry-remote'
 end
 
-# To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
-
-# To use Jbuilder templates for JSON
-# gem 'jbuilder'
-
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Deploy with Capistrano
-# gem 'capistrano'
-
-# To use debugger
-# gem 'debugger'
+#gem 'mysql2'
+group :development do
+  gem 'mysql2'
+end
