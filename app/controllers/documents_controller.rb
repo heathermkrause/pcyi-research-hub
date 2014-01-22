@@ -2,19 +2,32 @@ class DocumentsController < ApplicationController
   # GET /documents
   # GET /documents.json
 
-  before_filter :authenticate_user!
+  #before_filter :authenticate_user!
   
   def index
-    if current_user.admin
-      @documents = Document.find(:all, :order => "created_at ASC").paginate(:page => params[:page])
-    else
-      @documents = current_user.documents.paginate(:page => params[:page])
-    end
-    @keyfinding_of_document = @documents.empty? ? [] : Keyfinding.where(:document_id => @documents.all.map(&:id))
+
+    # TODO Fix pagination
+    #if current_user.admin
+    #  @documents = Document.find(:all, :order => "created_at ASC").paginate(:page => params[:page])
+    #else
+    #  @documents = current_user.documents.paginate(:page => params[:page])
+    #end
+
+    #@documents = Document.find(:all, :order => "created_at ASC").paginate(:page => params[:page])
+    #@documents = current_user.documents.paginate(:page => params[:page])
+
+    @documents = Document.find(:all, :order => "created_at ASC")
+
+    # TODO Remove if unnecessary
+    #@keyfinding_of_document = @documents.empty? ? [] : Keyfinding.where(:document_id => @documents.all.map(&:id))
+
+    @keyfinding_of_document = @documents.empty? ? [] : Keyfinding.where(:document_id => @documents.map(&:id))
+
     @keyword = Keyword.new
+
     respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @documents }
+    format.html # index.html.erb
+    format.json { render json: @documents }
     end
   end
 

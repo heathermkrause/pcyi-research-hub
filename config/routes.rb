@@ -1,15 +1,14 @@
 DocumentManagementFinal::Application.routes.draw do
 
-  resources :keyfindings
+  root :to => "documents#index"
 
- 
+  resources :keyfindings
 
   resources :keywords do
     collection do
       get "get_keywords"
     end
   end
-
 
   resources :documents do
     collection do
@@ -19,7 +18,6 @@ DocumentManagementFinal::Application.routes.draw do
       get "keywords"
     end
   end
-  root :to => redirect("/users/sign_in")
 
   devise_for :users, :skip => [:registrations]
 
