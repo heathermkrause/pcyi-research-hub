@@ -1,0 +1,16 @@
+<div class="span4" style="margin-left:-30px;">
+
+  <div id="demo5" class="demo3">
+    <div class="slides">
+      <% @keyfinding_of_document.each do |key_finding| %>
+        <div style="width:361px; height:270px;">
+
+          <p class="txt">
+            <img src="<%= key_finding.keyfinding_image.url(nil,:expires => 10.minutes) unless key_finding.keyfinding_image.blank? %>" border="0" alt="" title=""/>
+            <%= key_finding.keyfinding_text %>
+          </p>
+        </div>
+      <% end unless @keyfinding_of_document.nil? %>
+    </div>
+  </div>
+</div>
