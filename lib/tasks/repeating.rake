@@ -36,10 +36,25 @@ namespace :repeating do
       end
 
       # Keyfindings
+      kf_text = ws[row, 6].lstrip.rstrip
+
+      unless kf_text.empty?
+        kf = Keyfinding.find_or_create_by_keyfinding_text(kf_text)
+        doc.keyfindings << kf
+      end
 
       # Keywords
+      kw_text_field = ws[row, 8].lstrip.rstrip
 
-      #break if Rails.env.development?
+      unless kw_text_field.empty?
+
+        keywords = kw_text_field.split(",")
+
+        keywords.each do |keyword_text|
+          kw = Keyword.find_or_create_by_keyword_text(keyword_text.downcase)
+          doc.keywords << kw
+        end
+      end
     end
 
   end

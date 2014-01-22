@@ -65,13 +65,18 @@
 
                 <tr class="success">
                   <td><%= sr_no %></td>
-                  <td><%= report.report_name.blank? ? "Report name not available" : report.report_name %></td>
+                  <td>
+                    <%= report.report_name.blank? ? "Report name not available" : report.report_name %>
+                  </td>
+
                   <% if params[:search] %>
                     <td><%= matched_keywords(report) %></td>
                   <% end %>
+
                   <% unless params[:search] %>
                     <td onclick="setId('<%= report.id.to_s %>')"><a class="btn btn-success" href="#" data-toggle="modal" data-target="#key_word1" >Edit</a></td>
                   <% end %>
+
                   <td>
                     <% if report.pdf_file_name? && report.pdf_url? %>
 
