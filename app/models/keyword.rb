@@ -1,3 +1,14 @@
+# == Schema Information
+#
+# Table name: keywords
+#
+#  id           :integer          not null, primary key
+#  document_id  :integer
+#  keyword_text :string(255)
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
+#
+
 class Keyword < ActiveRecord::Base
   attr_accessible :document_id, :keyword_text
   belongs_to :document

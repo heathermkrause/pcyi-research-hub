@@ -1,3 +1,27 @@
+# == Schema Information
+#
+# Table name: documents
+#
+#  id                     :integer          not null, primary key
+#  report_name            :string(255)
+#  author                 :string(255)
+#  sponsoring_orgnization :string(255)
+#  date_of_report         :date
+#  key_recommendations    :text
+#  key_ages               :string(255)
+#  notes_on_mythodology   :text
+#  target_population      :string(255)
+#  data_availablity       :string(255)
+#  user_id                :integer
+#  created_at             :datetime         not null
+#  updated_at             :datetime         not null
+#  pdf_url                :string(255)
+#  pdf_file_name          :string(255)
+#  pdf_content_type       :string(255)
+#  pdf_file_size          :integer
+#  pdf_updated_at         :datetime
+#
+
 class Document < ActiveRecord::Base
   #default_scope order('created_at DESC')
   attr_accessible :author, :data_availablity, :date_of_report, :key_ages, :key_recommendations, :keywords, :notes_on_mythodology, :report_name, :sponsoring_orgnization, :target_population, :user_id, :keyfindings_attributes, :keywords_attributes,:pdf,:pdf_url
