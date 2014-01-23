@@ -6,6 +6,12 @@ class DocumentsController < ApplicationController
   
   def index
 
+    if params[:search].present?
+      @documents = Document.search(params[:search])
+    else
+      @documents = Document.random(5)
+    end
+
     # TODO Fix pagination
     #if current_user.admin
     #  @documents = Document.find(:all, :order => "created_at ASC").paginate(:page => params[:page])
@@ -16,7 +22,6 @@ class DocumentsController < ApplicationController
     #@documents = Document.find(:all, :order => "created_at ASC").paginate(:page => params[:page])
     #@documents = current_user.documents.paginate(:page => params[:page])
 
-    @documents = Document.random(5)
 
     # TODO Remove if unnecessary
     #@keyfinding_of_document = @documents.empty? ? [] : Keyfinding.where(:document_id => @documents.all.map(&:id))
@@ -117,27 +122,29 @@ class DocumentsController < ApplicationController
 
   end
 
-  def search
-    require 'will_paginate/array'
-    if current_user.admin
-      @documents = Document.find(:all, :include => [:keyfindings,:keywords], :conditions => ["keywords.keyword_text LIKE :search OR keyfindings.keyfinding_text LIKE :search ", :search => "%#{params[:search]}%"])
-    else
-      @documents = current_user.documents.find(:all, :include => [:keyfindings,:keywords], :conditions => ["keywords.keyword_text LIKE :search OR keyfindings.keyfinding_text LIKE :search ", :search => "%#{params[:search]}%"])
-    end
-    @keyfinding_of_document = @documents.empty? ? [] : Keyfinding.where(:document_id => @documents.map(&:id))
-    @keyword = Keyword.new
-
-    unless @documents.empty?
-       respond_to do |format|
-        format.html { render :index }
-        format.json { render json: @documents }
-      end
-    else
-       #error handeling code
-       flash[:alert] = "No search results."
-       redirect_to :action => "index"
-    end
-  end
+  # Using Searchkick gem. (https://github.com/ankane/searchkick)
+  # I don't think this controller method is necessary. (JM, 2014-01-22)
+  #def search
+  #  require 'will_paginate/array'
+  #  if current_user.admin
+  #    @documents = Document.find(:all, :include => [:keyfindings,:keywords], :conditions => ["keywords.keyword_text LIKE :search OR keyfindings.keyfinding_text LIKE :search ", :search => "%#{params[:search]}%"])
+  #  else
+  #    @documents = current_user.documents.find(:all, :include => [:keyfindings,:keywords], :conditions => ["keywords.keyword_text LIKE :search OR keyfindings.keyfinding_text LIKE :search ", :search => "%#{params[:search]}%"])
+  #  end
+  #  @keyfinding_of_document = @documents.empty? ? [] : Keyfinding.where(:document_id => @documents.map(&:id))
+  #  @keyword = Keyword.new
+  #
+  #  unless @documents.empty?
+  #     respond_to do |format|
+  #      format.html { render :index }
+  #      format.json { render json: @documents }
+  #    end
+  #  else
+  #     #error handeling code
+  #     flash[:alert] = "No search results."
+  #     redirect_to :action => "index"
+  #  end
+  #end
 
   def keywords
     @document = Document.find(params[:id])
