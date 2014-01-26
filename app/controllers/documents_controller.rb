@@ -8,23 +8,11 @@ class DocumentsController < ApplicationController
 
     if params[:search].present?
       @documents = Document.search(params[:search])
+      @page_title = "Search results"
     else
       @documents = Document.random(5)
+      @page_title = "Displaying featured reports"
     end
-
-    # TODO Fix pagination
-    #if current_user.admin
-    #  @documents = Document.find(:all, :order => "created_at ASC").paginate(:page => params[:page])
-    #else
-    #  @documents = current_user.documents.paginate(:page => params[:page])
-    #end
-
-    #@documents = Document.find(:all, :order => "created_at ASC").paginate(:page => params[:page])
-    #@documents = current_user.documents.paginate(:page => params[:page])
-
-
-    # TODO Remove if unnecessary
-    #@keyfinding_of_document = @documents.empty? ? [] : Keyfinding.where(:document_id => @documents.all.map(&:id))
 
     @keyfinding_of_document = @documents.empty? ? [] : Keyfinding.where(:document_id => @documents.map(&:id))
 
