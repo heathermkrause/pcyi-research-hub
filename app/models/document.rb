@@ -27,6 +27,22 @@ class Document < ActiveRecord::Base
 
   searchkick
 
+  def search_data
+    {
+      report_name: report_name,
+      author: author,
+      sponsoring_orgnization: sponsoring_orgnization,
+      date_of_report: date_of_report,
+      key_recommendations: key_recommendations,
+      key_ages: key_ages,
+      notes_on_mythodology: notes_on_mythodology,
+      target_population: target_population,
+      data_availablity: data_availablity,
+      keyfinding_text_field: keyfindings.map(&:keyfinding_text),
+      keyword_text_field: keywords.map(&:keyword_text)
+    }
+  end
+
   #default_scope order('created_at DESC')
   attr_accessible :author, :data_availablity, :date_of_report, :key_ages, :key_recommendations, :keywords, :notes_on_mythodology, :report_name, :sponsoring_orgnization, :target_population, :user_id, :keyfindings_attributes, :keywords_attributes,:pdf,:pdf_url
   belongs_to :user

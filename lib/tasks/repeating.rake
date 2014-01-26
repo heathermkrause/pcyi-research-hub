@@ -51,10 +51,13 @@ namespace :repeating do
         keywords = kw_text_field.split(",")
 
         keywords.each do |keyword_text|
-          kw = Keyword.find_or_create_by_keyword_text(keyword_text.downcase)
-          doc.keywords << kw
+          unless keyword_text.empty?
+            kw = Keyword.find_or_create_by_keyword_text(keyword_text.downcase)
+            doc.keywords << kw
+          end
         end
       end
+      #break if Rails.env.development?
     end
 
   end
