@@ -34,7 +34,9 @@
       </div>
 
       <center>
-        <h3 style="color:#7E7E7E;">Dashboard</h3>
+        <h3 style="color:#7E7E7E;">
+          <%= @page_title%>
+        </h3>
       </center>
 
       <div style="width:735px; margin:0px auto;">
@@ -48,7 +50,7 @@
                 <th width="6%">#</th>
                 <th width=<%= params[:search] ? "74%" : "76%" %>>Report Name</th>
                 <% if params[:search] %>
-                  <th width="auto">Matched keywords</th>
+                  <th width="auto">Keyfindings</th>
                 <% end %>
                 <% unless params[:search] %>
                   <th width="auto">Actions</th>
@@ -70,7 +72,7 @@
                   </td>
 
                   <% if params[:search] %>
-                    <td><%= matched_keywords(report) %></td>
+                    <td><%= report.keyfindings.collect{ |kf| kf.keyfinding_text }.to_sentence %></td>
                   <% end %>
 
                   <% unless params[:search] %>
