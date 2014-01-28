@@ -39,6 +39,8 @@ GEM
       nokogiri (>= 1.4.4)
       uuidtools (~> 2.1)
     bcrypt-ruby (3.1.2)
+    bootstrap-sass (3.0.3.0)
+      sass (~> 3.2)
     builder (3.0.4)
     climate_control (0.0.3)
       activesupport (>= 3.0)
@@ -158,6 +160,7 @@ GEM
     rails_12factor (0.0.2)
       rails_serve_static_assets
       rails_stdout_logging
+    rails_layout (1.0.5)
     rails_serve_static_assets (0.0.1)
     rails_stdout_logging (0.0.3)
     railties (3.2.13)
@@ -233,6 +236,7 @@ PLATFORMS
 
 DEPENDENCIES
   annotate
+  bootstrap-sass
   coffee-rails (~> 3.2.1)
   debugger
   devise
@@ -253,6 +257,7 @@ DEPENDENCIES
   pry-remote
   rails (= 3.2.13)
   rails_12factor
+  rails_layout
   randumb
   roo
   sass-rails (~> 3.2.3)

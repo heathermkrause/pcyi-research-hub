@@ -38,6 +38,7 @@ gem 'figaro'
 gem 'jquery-rails', '~> 2.3.0'
 gem 'searchkick'
 gem 'haml-rails'
+gem 'bootstrap-sass'
 
 group :test, :development do
   gem 'annotate'
@@ -48,4 +49,5 @@ end
 #gem 'mysql2'
 group :development do
   gem 'mysql2'
+  gem 'rails_layout'
 end

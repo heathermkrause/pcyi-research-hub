@@ -1,1 +1,17 @@
-%h1 Welcome!
+%h1= @page_title
+
+.row
+  .col-md-12
+    %table.table-bordered
+      %tr
+        %th Report name
+        %th Keyfindings
+      - @documents.each do |document|
+        %tr
+          - if document.link.present?
+            %td= link_to document.report_name, document.link, target: '_blank'
+          -else
+            %td= document.report_name
+          %td= document.keyfindings.collect{ |kf| kf.keyfinding_text }.to_sentence
+
+
