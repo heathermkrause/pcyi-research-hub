@@ -41,6 +41,7 @@ gem 'searchkick'
 group :test, :development do
   gem 'annotate'
   gem 'pry-remote'
+  gem 'foreman'
 end
 
 #gem 'mysql2'
