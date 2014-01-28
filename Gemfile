@@ -37,6 +37,7 @@ gem 'google_drive'
 gem 'figaro'
 gem 'jquery-rails', '~> 2.3.0'
 gem 'searchkick'
+gem 'haml-rails'
 
 group :test, :development do
   gem 'annotate'
