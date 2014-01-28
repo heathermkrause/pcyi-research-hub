@@ -39,6 +39,7 @@ gem 'jquery-rails', '~> 2.3.0'
 gem 'searchkick'
 gem 'haml-rails'
 gem 'bootstrap-sass'
+gem "squeel"
 
 group :test, :development do
   gem 'annotate'

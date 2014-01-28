@@ -49,6 +49,10 @@ class Document < ActiveRecord::Base
   has_many :keyfindings#,:dependent=>:destroy
   has_many :keywords#,:dependent=>:destroy
 
+  def self.link_present
+    where{link.matches("%http%")}
+  end
+
   def self.s3_config
     YAML.load(File.read("#{Rails.root}/config/s3.yml"))[Rails.env]    
   end
