@@ -10,8 +10,7 @@ class DocumentsController < ApplicationController
       @documents = Document.search(params[:search])
       @page_title = "Search results"
     else
-      @documents = Document.link_present.random(1)
-      @page_title = "Introductory text"
+      @documents = Document.link_present.random(5)
     end
 
     @keyfinding_of_document = @documents.empty? ? [] : Keyfinding.where(:document_id => @documents.map(&:id))

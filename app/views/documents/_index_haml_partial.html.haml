@@ -1,16 +1,18 @@
-.row
-  .col-md-12
-    %h1= @page_title
+- unless @page_title.nil?
+  .row
+    .col-md-12
+      %h1= @page_title
 
 - unless params[:search].present?
   .row
-    .col-md-12
+    .col-md-6
+      %br
+      = render 'slides'
+
+    .col-md-6
+      %h3 Introductory Text
       %p
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce volutpat pulvinar leo, consequat volutpat turpis convallis ut. Nullam velit nisi, blandit quis sapien id, mollis laoreet ante. Ut vel fringilla sapien. Integer eu diam mi. Cras orci orci, porta et neque id, tincidunt lacinia ligula. Pellentesque hendrerit, neque et pulvinar ultricies, odio orci laoreet ligula, et fermentum sem dui et mi. Aliquam in ligula consequat, egestas dui vitae, sagittis risus. Suspendisse mollis non neque at dapibus. Quisque porta blandit ligula vel suscipit. Maecenas viverra suscipit sem sit amet viverra. Nullam vitae diam vitae erat aliquet vulputate eu quis sem. Sed non lectus sollicitudin, iaculis erat a, venenatis risus.
-      %h3 Featured Report
-
-    -#.col-md-6
-    -#  = render "carousel_slides"
 
 .row
   .col-md-12
@@ -24,3 +26,5 @@
           %td= document.link.present? ? link_to(document.report_name, document.link, target: "_blank") : document.report_name
           %td= display_keyfindings(document.keyfindings)
           %td= display_keywords(document.keywords)
+
+= render 'documents/slides_javascripts'
