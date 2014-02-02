@@ -57,6 +57,7 @@ class Document < ActiveRecord::Base
     YAML.load(File.read("#{Rails.root}/config/s3.yml"))[Rails.env]    
   end
 
+  # Required for nested_form
   accepts_nested_attributes_for :keyfindings, :allow_destroy => true
   accepts_nested_attributes_for :keywords, :allow_destroy => true
 

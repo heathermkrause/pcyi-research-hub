@@ -1,14 +1,19 @@
-%button.btn.btn-primary.btn-large{"data-toggle" => "modal", "data-target" => "#myModal"}
+%button.btn.btn-primary.btn-large{"data-toggle" => "modal", "data-target" => "#document-modal-id-#{document.id}"}
   Edit
 
-#myModal.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", role: "dialog", tabindex: "-1"}
+.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", role: "dialog", tabindex: "-1", id: "document-modal-id-#{document.id}"}
   .modal-dialog
     .modal-content
       .modal-header
         %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", type: "button"} ×
         %h4#myModalLabel.modal-title Modal title
       .modal-body
-        \...
+
+        - # the new version
+        = #render "kf_kw_nested_form", document: document
+
+        -# the old version
+        = render "document_edit", document: document
       .modal-footer
         %button.btn.btn-default{"data-dismiss" => "modal", type: "button"} Close
         %button.btn.btn-primary{type: "button"} Save changes

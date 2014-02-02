@@ -28,6 +28,6 @@
           %td= document.link.present? ? link_to(document.report_name, document.link, target: "_blank") : document.report_name
           %td= display_keyfindings(document.keyfindings)
           %td= display_keywords(document.keywords)
-          %td= render "kf_kw_modal"
+          %td= render "kf_kw_modal", document: document
 
 = render 'documents/slides_javascripts'
