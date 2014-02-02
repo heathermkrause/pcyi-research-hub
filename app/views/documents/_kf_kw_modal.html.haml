@@ -10,10 +10,11 @@
       .modal-body
 
         - # the new version
-        = #render "kf_kw_nested_form", document: document
+        = render "kf_kw_nested_form", document: document
 
         -# the old version
-        = render "document_edit", document: document
+        = #render "document_edit", document: document
+
       .modal-footer
         %button.btn.btn-default{"data-dismiss" => "modal", type: "button"} Close
         %button.btn.btn-primary{type: "button"} Save changes
