@@ -1,4 +1,4 @@
-<%= nested_form_for(@document,:html => {:class=>"form-horizontal", :onsubmit => "validate()"}) do |f| %>
+<%= nested_form_for(document,:html => {:class=>"form-horizontal", :onsubmit => "validate()"}) do |f| %>
 <div id="findings">
 <%= f.fields_for :keyfindings do |keyfindings_form| %>
   <%= keyfindings_form.text_field :keyfinding_text %>

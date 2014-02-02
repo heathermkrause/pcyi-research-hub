@@ -1,0 +1,35 @@
+%button.btn.btn-primary.btn-large{"data-toggle" => "modal", "data-target" => "#document-modal-id-#{document.id}"}
+  Edit
+
+.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", role: "dialog", tabindex: "-1", id: "document-modal-id-#{document.id}"}
+  .modal-dialog
+    .modal-content
+      = nested_form_for document do |f|
+
+        .modal-header
+          %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", type: "button"} ×
+
+          %h4#myModalLabel.modal-title
+            = document.report_name
+          %p= document.author
+          %p= document.date_of_report
+
+        .modal-body
+
+          %strong Keyfindings
+          #findings
+            = f.fields_for :keyfindings do |keyfindings_form|
+              = keyfindings_form.text_area :keyfinding_text, rows: 4, cols: 75
+              = keyfindings_form.link_to_remove "Remove"
+            %p= f.link_to_add "Add a keyfinding", :keyfindings
+
+          %strong Keywords
+          #keywords
+            = f.fields_for :keywords do |keywords_form|
+              = keywords_form.text_field :keyword_text
+              = keywords_form.link_to_remove "Remove", "data-target" => "#keywords"
+            %p= f.link_to_add "Add a keyword", :keywords
+
+        .modal-footer
+          %button.btn.btn-default{"data-dismiss" => "modal", type: "button"} Close
+          = f.submit "Update", class: 'btn btn-primary'
