@@ -21,10 +21,13 @@
         %th Report name
         %th Keyfindings
         %th Keywords
+        %th Actions
+
       - @documents.each do |document|
         %tr
           %td= document.link.present? ? link_to(document.report_name, document.link, target: "_blank") : document.report_name
           %td= display_keyfindings(document.keyfindings)
           %td= display_keywords(document.keywords)
+          %td= render "kf_kw_modal"
 
 = render 'documents/slides_javascripts'
