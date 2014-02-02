@@ -21,12 +21,20 @@
         %th Report name
         %th Keyfindings
         %th Keywords
-        %th Actions
+        %th Change keyfindings/keywords
 
       - @documents.each do |document|
         %tr
           %td= document.link.present? ? link_to(document.report_name, document.link, target: "_blank") : document.report_name
-          %td= display_keyfindings(document.keyfindings)
+          %td
+
+            - if document.keyfindings.present?
+              - document.keyfindings.each do |kf|
+                %p= kf.keyfinding_text
+
+            - else
+              {none}
+
           %td= display_keywords(document.keywords)
           %td= render "kf_kw_modal", document: document
 
