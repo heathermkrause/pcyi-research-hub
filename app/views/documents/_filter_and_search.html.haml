@@ -1,8 +1,9 @@
-= form_tag({controller: "documents", action: "index"}, method: "get", class: "navbar-form navbar-right") do
-  = text_field_tag :search, params[:search]
-  = submit_tag "Search", class: 'btn'
-  = link_to 'reset', root_path, class: 'btn' if params[:search].present?
+= form_tag({controller: "documents", action: "index"}, method: "get", class: "navbar-form navbar-right", input_html: {role: "search"}) do
+  .form-group
+    = text_field_tag :search, params[:search], class: "form-control", placeholder: "Full report search"
+  = submit_tag "Search", class: 'btn btn-default'
 
 = form_tag({controller: "documents", action: "index"}, method: "get", class: "navbar-form navbar-right") do
-  = select_tag(:age_range, options_for_select([ ["All ages", 0], [ENV['AGE_RANGE_1'], ENV['AGE_RANGE_1']], [ENV['AGE_RANGE_2'], ENV['AGE_RANGE_2']], [ENV['AGE_RANGE_3'], ENV['AGE_RANGE_3']]]))
-  = submit_tag "Filter", class: 'btn'
+  .form-group
+    = select_tag(:age_range, options_for_select([ ["All ages", 0], [ENV['AGE_RANGE_1'], ENV['AGE_RANGE_1']], [ENV['AGE_RANGE_2'], ENV['AGE_RANGE_2']], [ENV['AGE_RANGE_3'], ENV['AGE_RANGE_3']]]), class: "form-control", prompt: "Filter by applicable age range")
+  = submit_tag "Filter", class: 'btn btn-default'
