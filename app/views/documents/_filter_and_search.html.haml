@@ -1,0 +1,9 @@
+= form_tag({controller: "documents", action: "index"}, method: "get", class: "navbar-form navbar-right", input_html: {role: "search"}) do
+  .form-group
+    = text_field_tag :search, params[:search], class: "form-control", placeholder: "Full search"
+  = submit_tag "Search", class: 'btn btn-default'
+
+= form_tag({controller: "documents", action: "index"}, method: "get", class: "navbar-form navbar-right") do
+  .form-group
+    = select_tag(:age_range, options_for_select([[ENV['AGE_RANGE_1'], ENV['AGE_RANGE_1']], [ENV['AGE_RANGE_2'], ENV['AGE_RANGE_2']], [ENV['AGE_RANGE_3'], ENV['AGE_RANGE_3']], ["All ages (0-24 years)", "All ages"]]), class: "form-control", prompt: "Select age range")
+  = submit_tag "Filter", class: 'btn btn-default'

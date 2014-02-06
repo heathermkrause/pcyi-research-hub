@@ -25,8 +25,8 @@ namespace :repeating do
     # Loop through the spreadsheet importing records
     for row in 2..ws.num_rows
 
-      # Ignore and rows which have already been reported
-      if ws[row, 13].empty?
+      # Ignore and rows which have already been reported (disabled in development environment)
+      if Rails.env.development? || ws[row, 13].empty?
 
         doc = Document.new
         doc.report_name = ws[row, 1]
@@ -39,6 +39,19 @@ namespace :repeating do
         doc.notes_on_mythodology = ws[row, 10]
         doc.target_population = ws[row, 11]
         doc.data_availablity = ws[row, 12]
+
+        # Set the tags
+        if ws[row, 14].eql?("1")
+          doc.tag_list.add(ENV['AGE_RANGE_1'])
+        end
+
+        if ws[row, 15].eql?("1")
+          doc.tag_list.add(ENV['AGE_RANGE_2'])
+        end
+
+        if ws[row, 16].eql?("1")
+          doc.tag_list.add(ENV['AGE_RANGE_3'])
+        end
 
         begin
           doc.save!

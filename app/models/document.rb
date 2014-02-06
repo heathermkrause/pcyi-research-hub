@@ -26,6 +26,7 @@
 class Document < ActiveRecord::Base
 
   searchkick
+  acts_as_taggable
 
   def search_data
     {

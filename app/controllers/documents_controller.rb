@@ -9,6 +9,9 @@ class DocumentsController < ApplicationController
     if params[:search].present?
       @documents = Document.search(params[:search])
       @page_title = "Search results"
+    elsif (age_range = params[:age_range]).present?
+      age_range.eql?("All ages") ? @documents = Document.all : @documents = Document.tagged_with(age_range)
+      @page_title = age_range
     else
       #@documents = Document.link_present.random(5)
       @documents = Document.link_present.limit(5)
