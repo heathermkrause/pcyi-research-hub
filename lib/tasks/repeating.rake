@@ -42,15 +42,15 @@ namespace :repeating do
 
         # Set the tags
         if ws[row, 14].eql?("1")
-          doc.tag_list.add(ws[1,14])
+          doc.tag_list.add(ENV['AGE_RANGE_1'])
         end
 
         if ws[row, 15].eql?("1")
-          doc.tag_list.add(ws[1,15])
+          doc.tag_list.add(ENV['AGE_RANGE_2'])
         end
 
         if ws[row, 16].eql?("1")
-          doc.tag_list.add(ws[1,16])
+          doc.tag_list.add(ENV['AGE_RANGE_3'])
         end
 
         begin
