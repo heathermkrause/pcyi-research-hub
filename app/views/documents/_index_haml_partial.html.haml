@@ -3,7 +3,7 @@
     .col-md-12
       %h1= @page_title
 
-- unless params[:search].present?
+- unless params[:search].present? || params[:age_range].present?
   .row
     .col-md-6
       %br
