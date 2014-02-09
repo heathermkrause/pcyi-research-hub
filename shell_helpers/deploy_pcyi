@@ -1,0 +1,20 @@
+#!/bin/bash
+
+clear
+
+# Merge repository branches
+git checkout master
+git merge develop
+git checkout develop
+
+# Enable maintenance mode
+heroku maintenance:on --app pcyi-research-hub
+
+# Update repositories
+git push origin master
+git push origin develop
+git push heroku master
+
+# Give some time for the server to restart, then disable maintenance mode
+sleep 15
+heroku maintenance:off --app pcyi-research-hub
