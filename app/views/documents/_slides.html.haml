@@ -1,0 +1,7 @@
+#slide-area
+  .slides
+    - unless @keyfinding_of_document.nil?
+      - @keyfinding_of_document.each do |key_finding|
+        %div{style: "width:361px; height:270px; padding: 20px;"}
+          %p.lead
+            %em= key_finding.keyfinding_text
