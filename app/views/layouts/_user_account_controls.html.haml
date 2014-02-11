@@ -5,3 +5,5 @@
   - if user_signed_in?
     = current_user.email
     = link_to "Sign out", destroy_user_session_path, method: :delete
+  - else
+    = link_to "Sign in", new_user_session_path unless request.path.eql? new_user_session_path

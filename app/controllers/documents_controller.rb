@@ -2,7 +2,9 @@ class DocumentsController < ApplicationController
   # GET /documents
   # GET /documents.json
 
-  #before_filter :authenticate_user!
+
+  # Keywords and Keyfindings are added/edited/removed via Document#update, through neested_form
+  before_filter :authenticate_user!, only: :update
   
   def index
 

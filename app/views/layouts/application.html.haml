@@ -9,7 +9,7 @@
     = csrf_meta_tags
   %body
     %header
-      = render 'layouts/navigation'
+      = render 'layouts/navigation' unless request.path.eql? new_user_session_path
     %main{:role => "main"}
       = render 'layouts/messages'
       = render 'layouts/user_account_controls'
