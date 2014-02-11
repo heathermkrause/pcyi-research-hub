@@ -19,11 +19,13 @@ DocumentManagementFinal::Application.routes.draw do
     end
   end
 
-  devise_for :users, :skip => [:registrations]
+  devise_for :users
 
-  devise_scope :user do
-    #    root :to => 'devise/sessions#new'
-  end
+  #devise_for :users, :skip => [:registrations]
+  #
+  #devise_scope :user do
+  #  root :to => 'devise/sessions#new'
+  #end
 
   match "/excelsheets/new" => "documents#create_with_excelsheet"
   match "/users/sign_up" => "documents#index"

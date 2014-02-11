@@ -2,7 +2,7 @@
 %html
   %head
     %meta{:name => "viewport", :content => "width=device-width, initial-scale=1.0"}
-    %title= content_for?(:title) ? yield(:title) : 'Document Management Final'
+    %title= content_for?(:title) ? yield(:title) : 'PCYI Research Hub'
     %meta{:name => "description", :content => "#{content_for?(:description) ? yield(:description) : 'Document Management Final'}"}
     = stylesheet_link_tag "application", media: "all"
     = javascript_include_tag "application"
@@ -12,4 +12,5 @@
       = render 'layouts/navigation'
     %main{:role => "main"}
       = render 'layouts/messages'
+      = render 'layouts/user_account_controls'
       = yield
