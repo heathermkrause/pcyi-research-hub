@@ -41,6 +41,7 @@ gem 'haml-rails'
 gem 'bootstrap-sass'
 gem 'squeel'
 gem 'acts-as-taggable-on'
+gem 'switch_user'
 
 group :test, :development do
   gem 'annotate'

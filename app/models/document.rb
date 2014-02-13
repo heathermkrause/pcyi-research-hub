@@ -46,7 +46,9 @@ class Document < ActiveRecord::Base
 
   #default_scope order('created_at DESC')
   attr_accessible :author, :data_availablity, :date_of_report, :key_ages, :key_recommendations, :keywords, :notes_on_mythodology, :report_name, :sponsoring_orgnization, :target_population, :user_id, :keyfindings_attributes, :keywords_attributes,:pdf,:pdf_url
-  belongs_to :user
+
+  #belongs_to :user
+
   has_many :keyfindings#,:dependent=>:destroy
   has_many :keywords#,:dependent=>:destroy
 

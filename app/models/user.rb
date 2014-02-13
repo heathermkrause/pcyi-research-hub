@@ -35,8 +35,7 @@ class User < ActiveRecord::Base
   validates_length_of :name, :maximum => 100, :message=> "less than %d if you don't mind"
   # attr_accessible :title, :body
 
-  has_many :documents,:dependent=>:destroy
-  has_many :excelsheets,:dependent=>:destroy
+  #has_many :documents,:dependent=>:destroy
+  #has_many :excelsheets,:dependent=>:destroy
 
-  accepts_nested_attributes_for :excelsheets
 end

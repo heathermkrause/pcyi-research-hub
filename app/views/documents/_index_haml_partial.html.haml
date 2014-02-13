@@ -20,7 +20,9 @@
         %th Report name
         %th Keyfindings
         %th Keywords
-        %th Change keyfindings/keywords
+
+        - if user_signed_in?
+          %th Change keyfindings/keywords
 
       - @documents.each do |document|
         %tr
@@ -35,6 +37,8 @@
               {none}
 
           %td= display_keywords(document.keywords)
-          %td= render "kf_kw_modal", document: document
+
+          - if user_signed_in?
+            %td= render "kf_kw_modal", document: document
 
 = render 'documents/slides_javascripts'

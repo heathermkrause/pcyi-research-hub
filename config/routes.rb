@@ -1,7 +1,5 @@
 DocumentManagementFinal::Application.routes.draw do
 
-  root :to => "documents#index"
-
   resources :keyfindings
 
   resources :keywords do
@@ -21,12 +19,14 @@ DocumentManagementFinal::Application.routes.draw do
 
   devise_for :users, :skip => [:registrations]
 
-  devise_scope :user do
-    #    root :to => 'devise/sessions#new'
-  end
+  #devise_scope :user do
+  #  get "/users/sign_in" => 'devise/sessions#new'
+  #end
 
   match "/excelsheets/new" => "documents#create_with_excelsheet"
   match "/users/sign_up" => "documents#index"
+
+  root :to => "documents#index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
