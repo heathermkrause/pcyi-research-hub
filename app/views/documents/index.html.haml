@@ -1,3 +1,42 @@
--# Easily switch between old and new versions of Document#index
-= #render 'index_erb_partial'
-= render 'index_haml_partial'
+- unless @page_title.nil?
+  .row
+    .col-md-12
+      %h1= @page_title
+
+- unless params[:search].present? || params[:age_range].present?
+  .row
+    .col-md-6
+      = render 'slides'
+
+    .col-md-6
+      = render 'introductory_text'
+
+.row
+  .col-md-12
+    %table.table-bordered
+      %tr
+        %th Report name
+        %th Keyfindings
+        %th Keywords
+
+        - if user_signed_in?
+          %th Change keyfindings/keywords
+
+      - @documents.each do |document|
+        %tr
+          %td= document.link.present? ? link_to(document.report_name, document.link, target: "_blank") : document.report_name
+          %td
+
+            - if document.keyfindings.present?
+              - document.keyfindings.each do |kf|
+                %p= kf.keyfinding_text
+
+            - else
+              {none}
+
+          %td= display_keywords(document.keywords)
+
+          - if user_signed_in?
+            %td= render "kf_kw_modal", document: document
+
+= render 'documents/slides_javascripts'
