@@ -4,7 +4,7 @@ class CreateDocuments < ActiveRecord::Migration
       t.string :report_name
       t.string :author
       t.string :sponsoring_orgnization
-      t.date :date_of_report
+      t.date :publication_date
       t.text :key_findings
       t.text :key_recommendations
       t.text :keywords

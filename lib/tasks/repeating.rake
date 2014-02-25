@@ -33,7 +33,7 @@ namespace :repeating do
         doc.link = ws[row, 2]
         doc.author = ws[row, 3]
         doc.sponsoring_orgnization = ws[row, 4]
-        doc.date_of_report = ws[row, 5]
+        doc.publication_date = ws[row, 5]
         doc.key_recommendations = ws[row, 7]
         doc.key_ages = ws[row, 9]
         doc.notes_on_mythodology = ws[row, 10]
@@ -95,7 +95,9 @@ namespace :repeating do
     ws.save()
 
     # Reindex search
-    Document.reindex
+    # This line fails when the script is run on production, not sure why.
+    # In the meantime run Document.reindex from the Heroku console
+    Document.reindex unless Rails.env.production?
   end
 
 end

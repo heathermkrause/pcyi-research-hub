@@ -61,7 +61,7 @@
 
               <div class="control-group">
                 <label class="control-label">Date of Report</label>
-                <div class="controls"><input type="text" id="datepicker" placeholder="Date of Report" class="hasDatepicker" required="" name="document[date_of_report]"></div>      
+                <div class="controls"><input type="text" id="datepicker" placeholder="Date of Report" class="hasDatepicker" required="" name="document[publication_date]"></div>
               </div>
 
               <div class="control-group">
@@ -137,8 +137,8 @@
     <%= f.text_field :sponsoring_orgnization %>
   </div>
   <div class="field">
-    <%= f.label :date_of_report %><br />
-    <%= f.date_select :date_of_report %>
+    <%= f.labelpublication_datert %><br />
+    <%= f.date_selepublication_dateport %>
   </div>
   <div class="field">
     <%= f.label :key_findings %><br />

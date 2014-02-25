@@ -18,7 +18,7 @@ class DocumentsControllerTest < ActionController::TestCase
 
   test "should create document" do
     assert_difference('Document.count') do
-      post :create, document: { author: @document.author, data_availablity: @document.data_availablity, date_of_report: @document.date_of_report, key_ages: @document.key_ages, key_findings: @document.key_findings, key_recommendations: @document.key_recommendations, keywords: @document.keywords, notes_on_mythodology: @document.notes_on_mythodology, report_name: @document.report_name, sponsoring_orgnization: @document.sponsoring_orgnization, target_population: @document.target_population, user_id: @document.user_id }
+      post :create, document: { author: @document.author, data_availablity: @document.data_availablity, publication_date: @documenpublication_datert, key_ages: @document.key_ages, key_findings: @document.key_findings, key_recommendations: @document.key_recommendations, keywords: @document.keywords, notes_on_mythodology: @document.notes_on_mythodology, report_name: @document.report_name, sponsoring_orgnization: @document.sponsoring_orgnization, target_population: @document.target_population, user_id: @document.user_id }
     end
 
     assert_redirected_to document_path(assigns(:document))
@@ -35,7 +35,7 @@ class DocumentsControllerTest < ActionController::TestCase
   end
 
   test "should update document" do
-    put :update, id: @document, document: { author: @document.author, data_availablity: @document.data_availablity, date_of_report: @document.date_of_report, key_ages: @document.key_ages, key_findings: @document.key_findings, key_recommendations: @document.key_recommendations, keywords: @document.keywords, notes_on_mythodology: @document.notes_on_mythodology, report_name: @document.report_name, sponsoring_orgnization: @document.sponsoring_orgnization, target_population: @document.target_population, user_id: @document.user_id }
+    put :update, id: @document, document: { author: @document.author, data_availablity: @document.data_availablipublication_dateport: @docpublication_datereport, key_ages: @document.key_ages, key_findings: @document.key_findings, key_recommendations: @document.key_recommendations, keywords: @document.keywords, notes_on_mythodology: @document.notes_on_mythodology, report_name: @document.report_name, sponsoring_orgnization: @document.sponsoring_orgnization, target_population: @document.target_population, user_id: @document.user_id }
     assert_redirected_to document_path(assigns(:document))
   end
 

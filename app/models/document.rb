@@ -6,7 +6,6 @@
 #  report_name            :string(255)
 #  author                 :string(255)
 #  sponsoring_orgnization :string(255)
-#  date_of_report         :date
 #  key_recommendations    :text
 #  key_ages               :string(255)
 #  notes_on_mythodology   :text
@@ -21,6 +20,7 @@
 #  pdf_file_size          :integer
 #  pdf_updated_at         :datetime
 #  link                   :string(255)
+#  publication_date       :string(255)
 #
 
 class Document < ActiveRecord::Base
@@ -33,7 +33,7 @@ class Document < ActiveRecord::Base
       report_name: report_name,
       author: author,
       sponsoring_orgnization: sponsoring_orgnization,
-      date_of_report: date_of_report,
+      publication_date: publication_date,
       key_recommendations: key_recommendations,
       key_ages: key_ages,
       notes_on_mythodology: notes_on_mythodology,
@@ -45,7 +45,7 @@ class Document < ActiveRecord::Base
   end
 
   #default_scope order('created_at DESC')
-  attr_accessible :author, :data_availablity, :date_of_report, :key_ages, :key_recommendations, :keywords, :notes_on_mythodology, :report_name, :sponsoring_orgnization, :target_population, :user_id, :keyfindings_attributes, :keywords_attributes,:pdf,:pdf_url
+  attr_accessible :author, :data_availablity, :publication_date, :key_ages, :key_recommendations, :keywords, :notes_on_mythodology, :report_name, :sponsoring_orgnization, :target_population, :user_id, :keyfindings_attributes, :keywords_attributes,:pdf,:pdf_url
 
   #belongs_to :user
 
@@ -99,7 +99,7 @@ class Document < ActiveRecord::Base
     rescue
       row[3] = nil
     end 
-    doc = create(:report_name => row[0], :author => row[1], :sponsoring_orgnization => row[2], :date_of_report => row[3], :key_recommendations => row[5], :key_ages => row[7], :notes_on_mythodology => row[8], :target_population => row[9], :data_availablity => row[10], :user_id => user_id)
+    doc = create(:report_name => row[0], :author => row[1], :sponsoring_orgnization => row[2], :publication_date => row[3], :key_recommendations => row[5], :key_ages => row[7], :notes_on_mythodology => row[8], :target_population => row[9], :data_availablity => row[10], :user_id => user_id)
     Keyword.create_keywords(row[6],doc.id) if !row[6].nil?
     Keyfinding.create!(:keyfinding_text => row[4], :document_id => doc.id) if !row[4].nil?
   end

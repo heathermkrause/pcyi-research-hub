@@ -6,7 +6,6 @@
 #  report_name            :string(255)
 #  author                 :string(255)
 #  sponsoring_orgnization :string(255)
-#  date_of_report         :date
 #  key_recommendations    :text
 #  key_ages               :string(255)
 #  notes_on_mythodology   :text
@@ -21,6 +20,7 @@
 #  pdf_file_size          :integer
 #  pdf_updated_at         :datetime
 #  link                   :string(255)
+#  publication_date       :string(255)
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
@@ -29,7 +29,7 @@ one:
   report_name: MyString
   author: MyString
   sponsoring_orgnization: MyString
-  date_of_report: 2013-12-02
+  publication_date: 2013-12-02
   key_findings: MyText
   key_recommendations: MyText
   keywords: MyText
@@ -43,7 +43,7 @@ two:
   report_name: MyString
   author: MyString
   sponsoring_orgnization: MyString
-  date_of_report: 2013-12-02
+publication_datert: 2013-12-02
   key_findings: MyText
   key_recommendations: MyText
   keywords: MyText

@@ -11,13 +11,12 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140206190859) do
+ActiveRecord::Schema.define(:version => 20140225140617) do
 
   create_table "documents", :force => true do |t|
     t.string   "report_name"
     t.string   "author"
     t.string   "sponsoring_orgnization"
-    t.date     "date_of_report"
     t.text     "key_recommendations"
     t.string   "key_ages"
     t.text     "notes_on_mythodology"
@@ -32,6 +31,7 @@ ActiveRecord::Schema.define(:version => 20140206190859) do
     t.integer  "pdf_file_size"
     t.datetime "pdf_updated_at"
     t.string   "link"
+    t.string   "publication_date"
   end
 
   create_table "excelsheets", :force => true do |t|

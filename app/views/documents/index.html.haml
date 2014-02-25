@@ -18,6 +18,7 @@
         %th Report name
         %th Keyfindings
         %th Keywords
+        %th Published
 
         - if user_signed_in?
           %th Change keyfindings/keywords
@@ -35,6 +36,7 @@
               {none}
 
           %td= display_keywords(document.keywords)
+          %td= document.publication_date
 
           - if user_signed_in?
             %td= render "kf_kw_modal", document: document

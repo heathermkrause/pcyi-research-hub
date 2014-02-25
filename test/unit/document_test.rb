@@ -6,7 +6,6 @@
 #  report_name            :string(255)
 #  author                 :string(255)
 #  sponsoring_orgnization :string(255)
-#  date_of_report         :date
 #  key_recommendations    :text
 #  key_ages               :string(255)
 #  notes_on_mythodology   :text
@@ -21,6 +20,7 @@
 #  pdf_file_size          :integer
 #  pdf_updated_at         :datetime
 #  link                   :string(255)
+#  publication_date       :string(255)
 #
 
 require 'test_helper'
