@@ -25,7 +25,6 @@ gem 'execjs'
 gem 'will_paginate', '~> 3.0'
 gem 'roo'
 gem "paperclip", "~> 3.0"
-gem "debugger"
 gem 'jquery-tokeninput-rails'
 gem "nested_form"
 gem 'rails_12factor', group: :production
@@ -47,6 +46,7 @@ group :test, :development do
   gem 'annotate'
   gem 'pry-remote'
   gem 'foreman'
+  gem "debugger"
 end
 
 #gem 'mysql2'
