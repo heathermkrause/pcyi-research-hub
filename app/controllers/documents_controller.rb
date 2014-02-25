@@ -19,6 +19,14 @@ class DocumentsController < ApplicationController
       @documents = Document.link_present.limit(5)
     end
 
+    # Sort by descending chronological publication date
+    @documents = @documents.sort do |a, b|
+      # Allow sorts of values of "Winter yyyy" against regular yyyy values
+      a_year = a.publication_date.blank? ? "" : a.publication_date.match(/.*(\d{4})/).captures.first
+      b_year = b.publication_date.blank? ? "" : b.publication_date.match(/.*(\d{4})/).captures.first
+      b_year <=> a_year
+    end
+
     @keyfinding_of_document = @documents.empty? ? [] : Keyfinding.where(:document_id => @documents.map(&:id))
 
     @keyword = Keyword.new
