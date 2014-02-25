@@ -16,14 +16,14 @@
             orientation: 'horizontal', //horizontal, vertical,
             auto: false,
             direction: 'next',
-            pause: 5000,
+            pause: 50000,
             circle: false,
             easing: '', //easeOutCirc, easeOutBounce,
             xml: '',
             pause_on_hover: false,
-            width: 655,
-            height: 170,
-            videos: false
+            videos: false,
+            width: 475,
+            height: 220
         },options);
 
         this.init = function(hndl){

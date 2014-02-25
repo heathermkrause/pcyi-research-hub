@@ -3,14 +3,15 @@
   %head
     %meta{:name => "viewport", :content => "width=device-width, initial-scale=1.0"}
     %title= content_for?(:title) ? yield(:title) : 'PCYI Research Hub'
-    %meta{:name => "description", :content => "#{content_for?(:description) ? yield(:description) : 'Document Management Final'}"}
+    %meta{:name => "description", :content => "#{content_for?(:description) ? yield(:description) : 'PCYI Research Hub'}"}
     = stylesheet_link_tag "application", media: "all"
     = javascript_include_tag "application"
     = csrf_meta_tags
   %body
-    %header
-      = render 'layouts/navigation' unless request.path.eql? new_user_session_path
-    %main{:role => "main"}
-      = render 'layouts/messages'
-      = render 'layouts/user_account_controls'
-      = yield
+    .container
+      %header
+        = render 'layouts/navigation' unless request.path.eql? new_user_session_path
+      %main{:role => "main"}
+        = render 'layouts/messages'
+        = render 'layouts/user_account_controls'
+        = yield
