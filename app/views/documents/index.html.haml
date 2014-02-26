@@ -5,6 +5,10 @@
 
 - unless params[:search].present? || params[:age_range].present?
   .row
+    .col-md-12
+      = image_tag "PCYI_hompage_banner.png", alt: ENV['SITE_NAME'], class: "img-responsive img-rounded"
+
+  .row
     .col-md-6.visible-lg
       = render 'slides'
 
