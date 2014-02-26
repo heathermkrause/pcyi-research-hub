@@ -10,8 +10,8 @@
   %body
     .container
       %header
-        = render 'layouts/navigation' unless request.path.eql? new_user_session_path
+        = render 'layouts/navigation' unless request.path.eql?(root_path) || request.path.eql?(new_user_session_path)
       %main{:role => "main"}
         = render 'layouts/messages'
-        = render 'layouts/user_account_controls'
         = yield
+        = render 'layouts/user_account_controls'
