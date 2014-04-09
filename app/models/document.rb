@@ -56,10 +56,6 @@ class Document < ActiveRecord::Base
     where{link.matches("%http%")}
   end
 
-  def self.s3_config
-    YAML.load(File.read("#{Rails.root}/config/s3.yml"))[Rails.env]    
-  end
-
   # Required for nested_form
   accepts_nested_attributes_for :keyfindings, :allow_destroy => true
   accepts_nested_attributes_for :keywords, :allow_destroy => true
@@ -68,10 +64,10 @@ class Document < ActiveRecord::Base
   has_attached_file :pdf,
                     :storage => :aws,
                     :s3_credentials => {
-                      :access_key_id => self.s3_config['access_key_id'],
-                      :secret_access_key => self.s3_config['secret_access_key']
+                      :access_key_id => ENV['S3_ACCESS_KEY_ID'],
+                      :secret_access_key => ENV['S3_SECRET_ACCESS_KEY']
                     },
-                    :s3_bucket => self.s3_config['bucket'],             
+                    :s3_bucket => ENV['S3_BUCKET'],
                     :s3_permissions => :authenticated_read,
                     :s3_host_name => 's3-us-west-2.amazonaws.com',
                     :s3_host_alias => "s3-us-west-2.amazonaws.com/pcyidocs",
