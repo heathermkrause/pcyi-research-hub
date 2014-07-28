@@ -7,7 +7,7 @@ namespace :repeating do
 
   # For ongoing import, set up a scheduled task in Heroku with the command: rake "repeating:import[pcyi_initial_import]"
 
-  desc "Initial import from Google Drive"
+  desc "Import from Google Drive"
   task :import, [:spreadsheet_name, :empty_database] => :environment do |t, args|
 
     if args[:empty_database].present? && args[:empty_database].eql?("empty_database")

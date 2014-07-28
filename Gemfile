@@ -2,9 +2,6 @@ source 'https://rubygems.org'
 ruby '1.9.3'
 
 gem "pg", "~> 0.11"
-#group :production do
-#  gem "pg", "~> 0.11"
-#end
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -27,7 +24,6 @@ gem 'roo'
 gem "paperclip", "~> 3.0"
 gem 'jquery-tokeninput-rails'
 gem "nested_form"
-gem 'rails_12factor', group: :production
 gem 'jquery_datepicker'
 gem "paperclip-aws"
 gem 'pry-rails'
@@ -49,8 +45,10 @@ group :test, :development do
   gem "debugger"
 end
 
-#gem 'mysql2'
 group :development do
-  gem 'mysql2'
   gem 'rails_layout'
+end
+
+group :production do
+  gem 'rails_12factor'
 end
