@@ -8,12 +8,35 @@ class DocumentsController < ApplicationController
   
   def index
 
+    # Search via Elasticsearch
     if params[:search].present?
       @documents = Document.search(params[:search])
       @page_title = "Search results"
-    elsif (age_range = params[:age_range]).present?
-      age_range.eql?("All ages") ? @documents = Document.all : @documents = Document.tagged_with(age_range)
-      @page_title = age_range
+
+    # Filter by Document tags
+    elsif (age_range = params[:age_range]).present? && (report_type = params[:report_type]).present?
+
+      # Filter by unspecified age range, unspecified report type (i.e., all Documents)
+      if age_range.eql?('All ages') && report_type.eql?('All report types')
+        @documents = Document.all
+
+      # Filter by unspecified age range, specified report type
+      elsif age_range.eql?('All ages')
+        @documents = Document.tagged_with(report_type)
+
+      # Filter by specified age range, unspecified report type
+      elsif report_type.eql?('All report types')
+        @documents = Document.tagged_with(age_range)
+
+      # Filter by specified age range, specified report type
+      else
+        @documents = Document.tagged_with(age_range, report_type, match_all: true)
+      end
+
+      # Set the search results page title with the tag search parameters
+      @page_title = "Filtered by: #{age_range}, Report type: #{report_type}"
+
+    # Documents for the home page
     else
       #@documents = Document.link_present.random(5)
       @documents = Document.link_present.limit(5)
