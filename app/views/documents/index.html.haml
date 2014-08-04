@@ -1,27 +1,31 @@
-- unless @page_title.nil?
-  .row
-    .col-md-12
-      %h1= @page_title
-
 - unless params[:search].present? || params[:age_range].present?
   .row
-    .col-md-12
+    .col-lg-12
       %br
       = image_tag "PCYI_hompage_banner.png", alt: ENV['SITE_NAME'], class: "img-responsive img-rounded"
 
   .row
-    .col-md-6.visible-lg
+    .col-lg-6.visible-lg
       = render 'slides'
 
-    .col-md-6
+    .col-lg-6
       = render 'introductory_text'
 
   .row
-    .col-md-12
+    .col-lg-12
       = render 'documents/filter_and_search'
 
 .row
-  .col-md-12
+  .col-lg-12
+
+    - if @page_title.present?
+
+      -#There's a formatting error somewhere, these line breaks shouldn't really be here. JM.
+      %br
+      %br
+      %br
+        %h3= @page_title
+
     %table.table-bordered
       %tr
         %th Report name

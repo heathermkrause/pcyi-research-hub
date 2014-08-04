@@ -30,11 +30,11 @@ class DocumentsController < ApplicationController
 
       # Filter by specified age range, specified report type
       else
-        @documents = Document.tagged_with(age_range, report_type, match_all: true)
+        @documents = Document.tagged_with([age_range, report_type], match_all: true)
       end
 
       # Set the search results page title with the tag search parameters
-      @page_title = "Filtered by: #{age_range}, Report type: #{report_type}"
+      @page_title = "Showing results for: #{age_range}, #{report_type}"
 
     # Documents for the home page
     else
