@@ -135,7 +135,7 @@ namespace :repeating do
       end
 
       # Quit after importing a number of records when debugging
-      break if (Rails.env.development? && row.eql?(6))
+      # break if (Rails.env.development? && row.eql?(6))
     end
     ws.save
 

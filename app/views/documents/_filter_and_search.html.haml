@@ -14,7 +14,7 @@
 
       and
       = label_tag('report type')
-      - params[:report_type].present? ? selected_report_type = params[:report_type] : selected_report_type = 'All report types'
-      = select_tag(:report_type, options_for_select([[ENV['REPORT_TYPE_1'], ENV['REPORT_TYPE_1']], [ENV['REPORT_TYPE_2'], ENV['REPORT_TYPE_2']], [ENV['REPORT_TYPE_3'], ENV['REPORT_TYPE_3']], [ENV['REPORT_TYPE_4'], ENV['REPORT_TYPE_4']], [ENV['REPORT_TYPE_5'], ENV['REPORT_TYPE_5']], ["All report types", "All report types"]], selected: selected_report_type), class: "form-control")
+      - params[:report_type].present? ? selected_report_type = params[:report_type] : selected_report_type = 'Any report type'
+      = select_tag(:report_type, options_for_select([[ENV['REPORT_TYPE_1'], ENV['REPORT_TYPE_1']], [ENV['REPORT_TYPE_2'], ENV['REPORT_TYPE_2']], [ENV['REPORT_TYPE_3'], ENV['REPORT_TYPE_3']], [ENV['REPORT_TYPE_4'], ENV['REPORT_TYPE_4']], [ENV['REPORT_TYPE_5'], ENV['REPORT_TYPE_5']], ["Any report type", "Any report type"]], selected: selected_report_type), class: "form-control")
 
     = submit_tag "Filter", class: 'btn btn-default'

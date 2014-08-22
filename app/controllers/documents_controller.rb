@@ -17,7 +17,7 @@ class DocumentsController < ApplicationController
     elsif (age_range = params[:age_range]).present? && (report_type = params[:report_type]).present?
 
       # Filter by unspecified age range, unspecified report type (i.e., all Documents)
-      if age_range.eql?('All ages') && report_type.eql?('All report types')
+      if age_range.eql?('All ages') && report_type.eql?('Any report type')
         @documents = Document.all
 
       # Filter by unspecified age range, specified report type
@@ -25,7 +25,7 @@ class DocumentsController < ApplicationController
         @documents = Document.tagged_with(report_type)
 
       # Filter by specified age range, unspecified report type
-      elsif report_type.eql?('All report types')
+      elsif report_type.eql?('Any report type')
         @documents = Document.tagged_with(age_range)
 
       # Filter by specified age range, specified report type
