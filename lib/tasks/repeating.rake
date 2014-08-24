@@ -140,8 +140,11 @@ namespace :repeating do
     ws.save
 
     # Reindex search
-    # This line fails when the script is run on production, not sure why.
-    # In the meantime, for production, run Document.reindex from the Heroku console
+    # This line fails when the script is run on production, not sure why. (JM, 2014-08-24)
+    # In the meantime, for production:
+    # 1) Go to the Elasticsearch dashboard (linked from Heroku addons)
+    # 2) Delete any existing indixes
+    # 3) Open the Heroku console and run 'Document.reindex'
     Document.reindex unless Rails.env.production?
   end
 
