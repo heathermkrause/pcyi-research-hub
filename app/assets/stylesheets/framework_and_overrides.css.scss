@@ -35,6 +35,7 @@ img {
 main {
   @extend .container;
   background-color: #eee;
+	font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif;
   padding-bottom: 80px;
   width: 100%;
   margin-top: 51px; // accommodate the navbar
