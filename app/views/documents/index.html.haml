@@ -20,11 +20,7 @@
 
     - if @page_title.present?
 
-      -#There's a formatting error somewhere, these line breaks shouldn't really be here. JM.
-      %br
-      %br
-      %br
-        %h3= "#{@page_title} (#{pluralize(@documents.count, 'result')})"
+      %h3= "#{@page_title} (#{pluralize(@documents.count, 'result')})"
 
     - if @documents.empty?
       No documents match search criteria. Please search again.
@@ -49,7 +45,7 @@
                   %p= kf.keyfinding_text
 
               - else
-                {none}
+                N/A
 
             %td= display_keywords(document.keywords)
             %td= document.publication_date
