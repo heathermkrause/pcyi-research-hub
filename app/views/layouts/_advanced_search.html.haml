@@ -1,4 +1,6 @@
-#advsearch.collapse
+- is_advanced_search = params[:age_range].present? || params[:report_type].present?
+
+#advsearch{:class => (is_advanced_search ? 'in' : 'collapse')}
   .panel-heading
     %h3.panel-title
       Advanced Search

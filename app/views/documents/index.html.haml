@@ -4,15 +4,11 @@
       = image_tag "PCYI_hompage_banner.jpg", alt: ENV['SITE_NAME'], class: "img-responsive img-rounded"
 
   .row
-    .col-md-6.hidden-xs
+    .col-md-6.hidden-sm.hidden-xs
       = render 'slides'
 
     .col-md-6
       = render 'introductory_text'
-
-.row
-  .col-lg-12
-    = render 'documents/filter_and_search'
 
 .row
   .col-lg-12
@@ -29,10 +25,10 @@
           %th Report name
           %th Key findings
           %th Keywords
-          %th Published
+          %th Year published
 
           - if user_signed_in?
-            %th Change keyfindings/keywords
+            %th Change key findings and keywords
 
         - @documents.each do |document|
           %tr
@@ -44,9 +40,15 @@
                   %p= kf.keyfinding_text
 
               - else
-                N/A
+                %p.light
+                  We haven&#8217;t catalogued all the key findings from this report yet. If you&#8217;d like to help, drop us a line!
 
-            %td= display_keywords(document.keywords)
+            %td
+              - if document.keywords.empty?
+                %p.light
+                  N/A
+              - else
+                = display_keywords(document.keywords)
             %td= document.publication_date
 
             - if user_signed_in?

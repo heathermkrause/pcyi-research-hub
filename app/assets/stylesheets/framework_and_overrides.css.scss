@@ -91,7 +91,7 @@ nav {
   @extend .panel, .panel-default;
   
   .panel-heading {
-    background-color: $purple-theme;
+    background-color: $dark-purple-theme;
     color: #fff;
     }
   form {
@@ -107,20 +107,11 @@ nav {
     @extend .form-control;
     }
   
-  .btn-primary {
-    background-color: $purple-theme;
-    border-color: $purple-theme;
-    
-    &:hover, &:focus {
-      background-color: $dark-purple-theme;
-      border-color: $dark-purple-theme;
-      }
-    }
   }
 
 .carousel-content {
   @extend .well;
-  margin: 20px;
+  margin: 20px 20px 20px 0;
   font-size: 20px;
   font-style: italic;
   height: 250px;
@@ -141,4 +132,9 @@ nav {
   .fields {
     margin-top: 10px;
     }
+  }
+
+.light {
+  // .small without the small
+  color: $gray-light; // Comes from Bootstrap
   }
