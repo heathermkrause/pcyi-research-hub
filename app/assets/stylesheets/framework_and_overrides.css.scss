@@ -7,7 +7,7 @@ $dark-purple-theme: #703895;
 
 // bootstrap overrides
 $font-family-sans-serif: $font-stack;
-$brand-primary: $blue-theme;
+$brand-primary: $dark-purple-theme;
 
 @import "bootstrap";
 
@@ -52,7 +52,7 @@ section {
   margin-top: 20px;
   }
 th {
-	background: $purple-theme;
+	background: $dark-purple-theme;
 	color: #eee;
   }
 h1, h2, h3, h4, h5, h6 {
@@ -66,7 +66,7 @@ nav {
   border-color: $blue-theme;
   color: #fff;
   
-  .nav > li > a {
+  .nav > li > a, .navbar-brand {
     color: #fff;
     
     &:hover, &:focus {
@@ -125,4 +125,20 @@ nav {
   font-style: italic;
   height: 250px;
   overflow: hidden;
+  }
+
+.edit-modal {
+  
+  .modal-header {
+    background-color: $dark-purple-theme;
+    color: #fff;
+    }
+  
+  .modal-body .btn {
+    margin-top: 10px;
+    }
+  
+  .fields {
+    margin-top: 10px;
+    }
   }
