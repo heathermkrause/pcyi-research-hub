@@ -1,11 +1,15 @@
 // import the CSS framework
-@import "bootstrap";
-
 $font-stack: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif;
 $purple-theme: #b92f93;
 $blue-theme: #00aeff;
 $dark-blue-theme: #0d9fe2;
 $dark-purple-theme: #703895;
+
+// bootstrap overrides
+$font-family-sans-serif: $font-stack;
+$brand-primary: $blue-theme;
+
+@import "bootstrap";
 
 // make all images responsive by default
 img {
@@ -107,9 +111,18 @@ nav {
     background-color: $purple-theme;
     border-color: $purple-theme;
     
-    &:hover {
+    &:hover, &:focus {
       background-color: $dark-purple-theme;
       border-color: $dark-purple-theme;
       }
     }
+  }
+
+.carousel-content {
+  @extend .well;
+  margin: 20px;
+  font-size: 20px;
+  font-style: italic;
+  height: 250px;
+  overflow: hidden;
   }
