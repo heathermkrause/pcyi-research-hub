@@ -98,7 +98,7 @@ nav {
     @extend .form-horizontal;
     }
   label {
-    @extend .col-sm-3, control-label;
+    @extend .col-sm-3, .control-label;
     }
   .input-div {
     @extend .col-sm-9, .col-md-5;
