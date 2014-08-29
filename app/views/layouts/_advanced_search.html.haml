@@ -1,0 +1,23 @@
+#advsearch.collapse
+  .panel-heading
+    %h3.panel-title
+      Advanced Search
+  .panel-body
+    = form_tag({controller: "documents", action: "index"}, method: "get", input_html: {role: "search"}) do
+      .form-group
+        = label_tag 'search_advanced', 'Search for (full text)'
+        .input-div
+          = text_field_tag :search, params[:search], class: "form-control", id: 'search_advanced'
+
+      .form-group
+        = label_tag 'age_range', 'Limit by age ranges'
+        .input-div
+          - params[:age_range].present? ? selected_age_range = params[:age_range] : selected_age_range = 'All ages'
+          = select_tag(:age_range, options_for_select([[ENV['AGE_RANGE_1'], ENV['AGE_RANGE_1']], [ENV['AGE_RANGE_2'], ENV['AGE_RANGE_2']], [ENV['AGE_RANGE_3'], ENV['AGE_RANGE_3']], ["All ages (0-24 years)", "All ages"]], selected: selected_age_range))
+      .form-group
+        = label_tag 'report_type', 'Limit by report type'
+        .input-div
+          - params[:report_type].present? ? selected_report_type = params[:report_type] : selected_report_type = 'Any report type'
+          = select_tag(:report_type, options_for_select([[ENV['REPORT_TYPE_1'], ENV['REPORT_TYPE_1']], [ENV['REPORT_TYPE_2'], ENV['REPORT_TYPE_2']], [ENV['REPORT_TYPE_3'], ENV['REPORT_TYPE_3']], [ENV['REPORT_TYPE_4'], ENV['REPORT_TYPE_4']], [ENV['REPORT_TYPE_5'], ENV['REPORT_TYPE_5']], ["Any report type", "Any report type"]], selected: selected_report_type))
+      %button.btn.btn-primary{'type' => 'submit'}
+        Search

@@ -8,11 +8,12 @@
     = javascript_include_tag "application"
     = csrf_meta_tags
   %body
-    .container
+    %main{:role => "main"}
       %header
-        /= render 'layouts/navigation' unless request.path.eql?(root_path) || request.path.eql?(new_user_session_path)
+        -#= render 'layouts/navigation' unless request.path.eql?(root_path) || request.path.eql?(new_user_session_path)
         = render 'layouts/header'
-      %main{:role => "main"}
-        = render 'layouts/messages'
-        = yield
-        = render 'layouts/user_account_controls'
+        = render 'layouts/new_navigation'
+        = render 'layouts/advanced_search'
+      = render 'layouts/messages'
+      = yield
+      = render 'layouts/user_account_controls'

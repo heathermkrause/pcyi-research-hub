@@ -1,19 +1,18 @@
 - unless params[:search].present? || params[:age_range].present?
   .row
     .col-lg-12
-      %br
       = image_tag "PCYI_hompage_banner.png", alt: ENV['SITE_NAME'], class: "img-responsive img-rounded"
 
   .row
-    .col-lg-6.visible-lg
+    .col-lg-6.hidden-xs
       = render 'slides'
 
     .col-lg-6
       = render 'introductory_text'
 
-  .row
-    .col-lg-12
-      = render 'documents/filter_and_search'
+.row
+  .col-lg-12
+    = render 'documents/filter_and_search'
 
 .row
   .col-lg-12
@@ -28,7 +27,7 @@
       %table.table.table-bordered
         %tr
           %th Report name
-          %th Keyfindings
+          %th Key findings
           %th Keywords
           %th Published
 
