@@ -1,6 +1,0 @@
-<h1>Editing keyfinding</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @keyfinding %> |
-<%= link_to 'Back', keyfindings_path %>
