@@ -50,7 +50,8 @@ class DocumentsController < ApplicationController
       b_year <=> a_year
     end
 
-    @keyfinding_of_document = @documents.empty? ? [] : Keyfinding.where(:document_id => @documents.map(&:id))
+    # Select 20 Keyfindings at random from the entire collection of Keyfindings
+    @keyfinding_of_document = Keyfinding.random(20)
 
     @keyword = Keyword.new
 
