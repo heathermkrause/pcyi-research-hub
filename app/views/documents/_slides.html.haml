@@ -1,7 +1,20 @@
-#slide-area
-  .slides
-    - unless @keyfinding_of_document.nil?
-      - @keyfinding_of_document.each do |key_finding|
-        %div
-          %p.lead
-            %em= key_finding.keyfinding_text
+-# #slide-area
+  -# .slides
+    -# - unless @keyfinding_of_document.nil?
+      -# - @keyfinding_of_document.each do |key_finding|
+        -# %div
+          -# %p.lead
+            -# %em= key_finding.keyfinding_text
+          
+- unless @keyfinding_of_document.nil?
+  #key-findings.carousel.slide{'data-ride' => 'carousel'}
+    .carousel-inner
+      - @keyfinding_of_document.each_with_index do |key_finding, i|
+        - if i == 0
+          .item.active
+            .carousel-content
+              = key_finding.keyfinding_text
+        - else
+          .item
+            .carousel-content
+              = key_finding.keyfinding_text

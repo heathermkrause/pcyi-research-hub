@@ -37,6 +37,7 @@ gem 'bootstrap-sass'
 gem 'squeel'
 gem 'acts-as-taggable-on'
 gem 'switch_user'
+gem 'autoprefixer-rails'
 
 group :test, :development do
   gem 'annotate'

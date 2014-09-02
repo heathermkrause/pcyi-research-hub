@@ -1,0 +1,15 @@
+-# navigation styled for Bootstrap 3.0
+%nav{role: "navigation"}
+  .container-fluid
+    .navbar-header
+      %button.navbar-toggle{"data-target" => "#navbar-to-collapse", "data-toggle" => "collapse", :type => "button"}
+        %span.sr-only Toggle navigation
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+      = link_to 'Home', :root, class: 'navbar-brand'
+
+    .collapse.navbar-collapse{'id' => 'navbar-to-collapse'}
+      %ul.nav.navbar-nav
+        = render 'layouts/navigation_links'
+      = render 'documents/filter_and_search'

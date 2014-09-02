@@ -1,4 +1,14 @@
 // import the CSS framework
+$font-stack: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif;
+$purple-theme: #b92f93;
+$blue-theme: #00aeff;
+$dark-blue-theme: #0d9fe2;
+$dark-purple-theme: #703895;
+
+// bootstrap overrides
+$font-family-sans-serif: $font-stack;
+$brand-primary: $dark-purple-theme;
+
 @import "bootstrap";
 
 // make all images responsive by default
@@ -34,12 +44,102 @@ img {
 // to make views framework-neutral
 main {
   @extend .container;
-  background-color: #eee;
+  font-family: $font-stack;
   padding-bottom: 80px;
-  width: 100%;
-  margin-top: 51px; // accommodate the navbar
   }
 section {
   @extend .row;
   margin-top: 20px;
+  }
+th {
+	background: $dark-purple-theme;
+	color: #eee;
+  }
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.3;
+  font-family: $font-stack;
+  }
+
+nav {
+  @extend .navbar;
+  background-color: $blue-theme;
+  border-color: $blue-theme;
+  color: #fff;
+  
+  .nav > li > a, .navbar-brand {
+    color: #fff;
+    
+    &:hover, &:focus {
+      background-color: $dark-blue-theme;
+      color: #fff;
+      }
+    }
+  
+  .navbar-toggle {
+    border-color: $dark-blue-theme;
+    
+    &:hover, &:focus {
+      background-color: $dark-blue-theme;
+      }
+  
+    .icon-bar {
+      background-color: #fff;
+      }
+    }
+  }
+#advsearch {
+  @extend .panel, .panel-default;
+  
+  .panel-heading {
+    background-color: $dark-purple-theme;
+    color: #fff;
+    }
+  form {
+    @extend .form-horizontal;
+    }
+  label {
+    @extend .col-sm-3, .control-label;
+    }
+  .input-div {
+    @extend .col-sm-9, .col-md-5;
+    }
+  input, select {
+    @extend .form-control;
+    }
+  
+  }
+
+.carousel-content {
+  @extend .well;
+  margin: 20px 20px 20px 0;
+  padding: 20px;
+  max-height: 250px;
+  font-size: 20px;
+  font-style: italic;
+  overflow: hidden;
+  }
+
+.item {
+  height: 250px;
+}
+
+.edit-modal {
+  
+  .modal-header {
+    background-color: $dark-purple-theme;
+    color: #fff;
+    }
+  
+  .modal-body .btn {
+    margin-top: 10px;
+    }
+  
+  .fields {
+    margin-top: 10px;
+    }
+  }
+
+.light {
+  // .small without the small
+  color: $gray-light; // Comes from Bootstrap
   }

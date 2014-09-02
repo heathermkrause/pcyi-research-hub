@@ -1,7 +1,7 @@
 %button.btn.btn-primary.btn-large{"data-toggle" => "modal", "data-target" => "#document-modal-id-#{document.id}"}
   Edit
 
-.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", role: "dialog", tabindex: "-1", id: "document-modal-id-#{document.id}"}
+.modal.edit-modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", role: "dialog", tabindex: "-1", id: "document-modal-id-#{document.id}"}
   .modal-dialog
     .modal-content
       = nested_form_for document do |f|
@@ -11,24 +11,28 @@
 
           %h4#myModalLabel.modal-title
             = document.report_name
-          %p= document.author
-          %p= document.publication_date
+          %p
+            = document.author
+            = surround '(', ')' do
+              Published:
+              = document.publication_date
 
         .modal-body
-
-          %strong Keyfindings
-          #findings
-            = f.fields_for :keyfindings do |keyfindings_form|
-              = keyfindings_form.text_area :keyfinding_text, rows: 4, cols: 75
-              = keyfindings_form.link_to_remove "Remove"
-            %p= f.link_to_add "Add a keyfinding", :keyfindings
-
-          %strong Keywords
-          #keywords
-            = f.fields_for :keywords do |keywords_form|
-              = keywords_form.text_field :keyword_text
-              = keywords_form.link_to_remove "Remove", "data-target" => "#keywords"
-            %p= f.link_to_add "Add a keyword", :keywords
+          .form-group
+            = f.label :keyfindings, 'Key findings'
+            #findings
+              = f.fields_for :keyfindings do |keyfindings_form|
+                = keyfindings_form.text_area :keyfinding_text, rows: 4, cols: 75, class: 'form-control'
+                = keyfindings_form.link_to_remove "Remove", class: 'btn btn-danger remove-btn'
+              %p= f.link_to_add "Add a key finding", :keyfindings, class: 'btn btn-success'
+          
+          .form-group
+            = f.label :keywords
+            #keywords
+              = f.fields_for :keywords do |keywords_form|
+                = keywords_form.text_field :keyword_text, class: 'form-control'
+                = keywords_form.link_to_remove "Remove", "data-target" => "#keywords", class: 'btn btn-danger remove-btn'
+              %p= f.link_to_add "Add a keyword", :keywords, class: 'btn btn-success'
 
         .modal-footer
           %button.btn.btn-default{"data-dismiss" => "modal", type: "button"} Close

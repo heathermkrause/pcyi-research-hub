@@ -25,7 +25,7 @@
 
 class Document < ActiveRecord::Base
 
-  searchkick
+  searchkick({:index_name => 'documents_production_20140824134454201'})
   acts_as_taggable
 
   def search_data
