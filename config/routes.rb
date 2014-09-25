@@ -26,6 +26,10 @@ DocumentManagementFinal::Application.routes.draw do
   match "/excelsheets/new" => "documents#create_with_excelsheet"
   match "/users/sign_up" => "documents#index"
 
+  %w(contact_us about_us). each do |page|
+    match "/#{page}" => "site##{page}"
+  end
+
   root :to => "documents#index"
 
   # The priority is based upon order of creation:

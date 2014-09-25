@@ -1,11 +1,3 @@
--# #slide-area
-  -# .slides
-    -# - unless @keyfinding_of_document.nil?
-      -# - @keyfinding_of_document.each do |key_finding|
-        -# %div
-          -# %p.lead
-            -# %em= key_finding.keyfinding_text
-          
 - unless @keyfinding_of_document.nil?
   #key-findings.carousel.slide{'data-ride' => 'carousel', 'data-interval' => '7500'}
     .carousel-inner
