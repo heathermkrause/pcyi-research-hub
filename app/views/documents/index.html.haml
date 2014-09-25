@@ -41,7 +41,7 @@
 
               - else
                 %p.light
-                  We haven&#8217;t catalogued all the key findings from this report yet. If you&#8217;d like to help, drop us a line!
+                  = "We haven't catalogued all the key findings from this report yet. If you'd like to help, #{mail_to(ENV['MANAGER_EMAIL'], 'drop us a line!')}".html_safe
 
             %td
               - if document.keywords.empty?
