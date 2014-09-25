@@ -7,7 +7,7 @@
             -# %em= key_finding.keyfinding_text
           
 - unless @keyfinding_of_document.nil?
-  #key-findings.carousel.slide{'data-ride' => 'carousel'}
+  #key-findings.carousel.slide{'data-ride' => 'carousel', 'data-interval' => '7500'}
     .carousel-inner
       - @keyfinding_of_document.each_with_index do |key_finding, i|
         - if i == 0
