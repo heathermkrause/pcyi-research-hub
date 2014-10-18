@@ -30,6 +30,10 @@
           - if user_signed_in?
             %th Change key findings and keywords
 
+          - if Rails.env.development?
+            %th Tags
+            %th Document ID
+
         - @documents.each do |document|
           %tr
             %td= document.link.present? ? link_to(document.report_name, document.link, target: "_blank") : document.report_name
@@ -53,3 +57,10 @@
 
             - if user_signed_in?
               %td= render "kf_kw_modal", document: document
+
+            - if Rails.env.development?
+              %td
+                %ul
+                  - document.tags.each do |tag|
+                    %li= tag.name
+              %td= document.id

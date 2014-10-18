@@ -35,7 +35,7 @@ class Document < ActiveRecord::Base
       sponsoring_orgnization: sponsoring_orgnization,
       publication_date: publication_date,
       key_recommendations: key_recommendations,
-      key_ages: key_ages,
+      # key_ages: key_ages,
       notes_on_mythodology: notes_on_mythodology,
       target_population: target_population,
       data_availablity: data_availablity,
@@ -75,7 +75,7 @@ class Document < ActiveRecord::Base
                     :path => "pcyi_documents/:id/:filename",
                     :url => ":s3_domain_url" 
 
-  validates_presence_of :key_ages, :report_name
+  validates_presence_of :report_name
 
   #validates_length_of :report_name, :maximum => 150, :message=> "should be less than 150"
   #validates_length_of :author, :maximum => 100, :message => "should be than less than 100 "
@@ -98,6 +98,10 @@ class Document < ActiveRecord::Base
     doc = create(:report_name => row[0], :author => row[1], :sponsoring_orgnization => row[2], :publication_date => row[3], :key_recommendations => row[5], :key_ages => row[7], :notes_on_mythodology => row[8], :target_population => row[9], :data_availablity => row[10], :user_id => user_id)
     Keyword.create_keywords(row[6],doc.id) if !row[6].nil?
     Keyfinding.create!(:keyfinding_text => row[4], :document_id => doc.id) if !row[4].nil?
+  end
+
+  def tag_names
+    self.tags.collect{|tag| tag.name}
   end
 
 end

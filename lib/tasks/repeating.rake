@@ -129,8 +129,8 @@ namespace :repeating do
         #------------------------------------------------------------------------------
 
         # Log the Datetime of row import
-        ws[row, 1] = DateTime.now.to_s
-        puts "#{doc.report_name} imported"
+        ws[row, 1] = "#{DateTime.now.to_s} (Document ID: #{doc.id})"
+        puts "#{doc.report_name} (imported)"
 
       end
 
