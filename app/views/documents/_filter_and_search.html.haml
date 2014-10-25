@@ -1,10 +1,11 @@
 - if request.path.eql?(documents_path) || request.path.eql?(root_path)
 
   = form_tag({controller: "documents", action: "index"}, method: "get", class: "navbar-form navbar-right", input_html: {role: "search"}) do
+
     .form-group
+      = hidden_field_tag :quick, true
       = text_field_tag :search, params[:search], class: "form-control", placeholder: "Search reports"
     = submit_tag "Search", class: 'btn btn-default'
-
   -# = form_tag({controller: "documents", action: "index"}, method: "get", class: "navbar-form navbar-right") do
     -# .form-group
 

@@ -11,11 +11,10 @@ class DocumentsController < ApplicationController
     # Search via Elasticsearch
     if params[:search].present?
       @documents = Document.search(params[:search]).to_a
-
-      # Filter out unmatching tags from initial search results
-      @documents = @documents.keep_if{|doc| doc.tag_names.include?(params[:age_range])} unless params[:age_range].eql?('All ages')
-      @documents = @documents.keep_if{|doc| doc.tag_names.include?(params[:report_type])} unless params[:report_type].eql?('Any report type')
-
+      if !params[:quick]
+        @documents = @documents.keep_if{|doc| doc.tag_names.include?(params[:age_range])} unless params[:age_range].eql?('All ages')
+        @documents = @documents.keep_if{|doc| doc.tag_names.include?(params[:report_type])} unless params[:report_type].eql?('Any report type')
+      end
       @page_title = "Search results"
 
     # Filter by Document tags
