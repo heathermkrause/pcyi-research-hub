@@ -26,7 +26,7 @@ DocumentManagementFinal::Application.routes.draw do
   match "/excelsheets/new" => "documents#create_with_excelsheet"
   match "/users/sign_up" => "documents#index"
 
-  %w(contact_us about_us). each do |page|
+  %w(contact_us about_us dashboard dataminute visuals). each do |page|
     match "/#{page}" => "site##{page}"
   end
 

@@ -43,7 +43,7 @@ group :test, :development do
   gem 'annotate'
   gem 'pry-remote'
   gem 'foreman'
-  gem "debugger"
+#  gem "debugger"
 end
 
 group :development do
