@@ -1,5 +1,8 @@
 DocumentManagementFinal::Application.routes.draw do
 
+  resources :libraries
+
+
   resources :keyfindings
 
   resources :keywords do

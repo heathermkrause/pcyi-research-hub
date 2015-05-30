@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140225140617) do
+ActiveRecord::Schema.define(:version => 20150530143003) do
 
   create_table "documents", :force => true do |t|
     t.string   "report_name"
@@ -60,6 +60,15 @@ ActiveRecord::Schema.define(:version => 20140225140617) do
     t.string   "keyword_text"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
+  end
+
+  create_table "libraries", :force => true do |t|
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   create_table "taggings", :force => true do |t|
