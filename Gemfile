@@ -17,7 +17,6 @@ end
 
 gem 'rails', '3.2.13'
 gem 'devise'
-gem 'therubyracer'
 gem 'execjs'
 gem 'will_paginate', '~> 3.0'
 gem 'roo'
