@@ -1,7 +1,8 @@
 DocumentManagementFinal::Application.routes.draw do
 
-  resources :libraries
+  get "data-visualisation-library" => "libraries#data_visualisation"
 
+  resources :libraries, except: [:edit]
 
   resources :keyfindings
 

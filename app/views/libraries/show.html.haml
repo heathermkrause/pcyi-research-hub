@@ -1,6 +1,8 @@
-%p#notice= notice
+<div class="row">
+<div class="col-lg-12" style = "text-align:center">
+= image_tag(@library.image.url, class: "thumbnail")
 
+= link_to "Download", @library.image.url, class: "btn btn-primary", download: true
+</div>
+</div>
 
-= link_to 'Edit', edit_library_path(@library)
-\|
-= link_to 'Back', libraries_path

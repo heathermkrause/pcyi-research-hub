@@ -1,0 +1,24 @@
+<div class="row">
+  <div class="col-lg-12">
+    <h1 style="margin-bottom:20px;">Data Visualisation Library</h1>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-lg-12">
+    <% n = 0 %>
+    <% @glibraries = @libraries.group_by {r= n/3; n += 1; r } %> 
+    <% @glibraries.each do |k, libraries| %>
+      <div class="row">
+        <% libraries.each do |library| %>
+          <div class="col-lg-4 text-center">
+          <%= link_to library_url(library) do %>
+            <%= image_tag library.image.url, class: "thumbnail" %>
+          <% end %>
+            <%= link_to "Download", library.image.url, class: "btn btn-primary", download: true %>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>

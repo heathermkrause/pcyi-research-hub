@@ -2,7 +2,7 @@ class LibrariesController < ApplicationController
   # GET /libraries
   # GET /libraries.json
   def index
-    @libraries = Library.all
+    @libraries = Library.paginate(page: params[:page], per_page: 20)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -67,6 +67,10 @@ class LibrariesController < ApplicationController
         format.json { render json: @library.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  def data_visualisation
+    @libraries = Library.paginate(page: params[:page], per_page: 20)
   end
 
   # DELETE /libraries/1
