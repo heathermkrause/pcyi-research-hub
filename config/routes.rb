@@ -1,6 +1,6 @@
 DocumentManagementFinal::Application.routes.draw do
 
-  get "data-visualisation-library" => "libraries#data_visualisation"
+  match "data-viz-library" => "libraries#data_viz_library", as: :data_viz_library
 
   resources :libraries, except: [:edit]
 

@@ -69,7 +69,7 @@ class LibrariesController < ApplicationController
     end
   end
 
-  def data_visualisation
+  def data_viz_library
     @libraries = Library.paginate(page: params[:page], per_page: 20)
   end
 
